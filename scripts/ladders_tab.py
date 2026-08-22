@@ -118,7 +118,7 @@ CSS = r"""
 .lad td.num{text-align:right; font-variant-numeric:tabular-nums}
 .lad tr.t1 td:first-child{border-left:3px solid var(--accent); padding-left:6px}
 .lad .pill{font-size:11px; color:var(--ink-3); border:1px solid var(--rule-2); padding:0 4px}
-.lad .pill.warn{color:var(--accent-ink); border-color:var(--accent-ink)}
+.lad .pill.warn{border-style:dashed}
 .lad .emit{color:var(--accent-ink)}
 .lad .chain{display:flex; align-items:flex-start; font-family:ui-monospace,Menlo,Consolas,monospace}
 .lad .lv,.lad .ar{display:inline-flex; flex-direction:column; line-height:1.25}
@@ -141,7 +141,9 @@ BODY = r"""
       |&Delta;J|&nbsp;&le;&nbsp;m rules for that photon number, with every rung but the last
       outliving the 20&nbsp;ps intra-burst spacing.</p>
     <p>A chain ending above the ionization limit ends in an ion rather than a photon. One
-      ending on a bound picosecond level emits instead, and the wavelength is given.</p>
+      ending on a bound picosecond level emits instead, and the wavelength is given. Where the
+      rung below the top sits less than two photons under the ionization limit, that is noted
+      too: the field driving the last hop can ionize that rung instead of climbing it.</p>
   </div>
 
   <form class="controls" onsubmit="return false">
