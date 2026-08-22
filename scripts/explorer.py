@@ -659,7 +659,7 @@ function buildRail(){
     if (!byEl.has(r.el)) byEl.set(r.el, []);
     byEl.get(r.el).push(r);
   }
-  const order = [...byEl.keys()].sort((a,b) => (ELEM[a]?.[0] ?? 999) - (ELEM[b]?.[0] ?? 999));
+  const order = [...byEl.keys()].sort((a,b) => a.localeCompare(b));
   let html = '';
   for (const el of order){
     const list = byEl.get(el);

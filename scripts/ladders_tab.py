@@ -118,6 +118,7 @@ CSS = r"""
 .lad td.num{text-align:right; font-variant-numeric:tabular-nums}
 .lad tr.t1 td:first-child{border-left:3px solid var(--accent); padding-left:6px}
 .lad .pill{font-size:11px; color:var(--ink-3); border:1px solid var(--rule-2); padding:0 4px}
+.lad .pill.warn{color:var(--accent-ink); border-color:var(--accent-ink)}
 .lad .emit{color:var(--accent-ink)}
 .lad .chain{display:flex; align-items:flex-start; font-family:ui-monospace,Menlo,Consolas,monospace}
 .lad .lv,.lad .ar{display:inline-flex; flex-direction:column; line-height:1.25}
@@ -280,11 +281,21 @@ function ladderRow(sp, L){
         + (L.fastTau != null ? ' · fast rung τ ' + esc(tauText(L.fastTau)) : "");
   }
   const flag = L.unver ? ' <span class="pill">' + L.unver + ' rung(s) unpublished</span>' : "";
+  /* The field that drives the last hop also ionizes the rung it starts from. Warn when that
+     rung sits less than two photons below the ionization limit, because then a lower-order
+     ionization competes with the hop and the ladder leaks before it reaches the top. */
+  let leak = "";
+  const ip = DATA[sp] && DATA[sp].ion, parked = Es[Es.length - 2];
+  if (ip && parked != null){
+    const n = (ip - parked) / (HC / L.nms[L.nms.length - 1]);
+    if (n < 2) leak = ' <span class="pill warn">last rung ' + n.toFixed(1)
+                    + 'γ below ionization</span>';
+  }
   return '<tr><td>' + esc(sp) + (L.kind === "ground" ? ' <span class="pill">ground</span>' : "")
        + '</td><td class="num">' + L.order + '</td><td class="num">' + L.ms.join("+")
        + '</td><td class="num">' + L.det.toFixed(1) + ' meV</td>'
        + '<td><div class="chain">' + line + '</div><div class="terms">' + terms + '</div></td>'
-       + '<td>' + top + flag + '</td></tr>';
+       + '<td>' + top + flag + leak + '</td></tr>';
 }
 
 /* Where the ladder's picosecond state sits, and its lifetime where one was measured. Above
@@ -352,7 +363,8 @@ function drawLadders(){
 function initLadders(){
   const sel = $('#lSp');
   sel.innerHTML = '<option value="any">all</option>'
-    + MAT.filter(m => LAD[m.spectrum]).map(m =>
+    + MAT.filter(m => LAD[m.spectrum])
+         .slice().sort((a, b) => a.spectrum.localeCompare(b.spectrum)).map(m =>
         '<option value="' + esc(m.spectrum) + '">' + esc(m.spectrum) + "</option>").join("");
   ["#lTop", "#lDet", "#lCol", "#lVer", "#lStart", "#lSp"].forEach(sel =>
     $(sel).addEventListener("change", drawLadders));
