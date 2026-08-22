@@ -130,7 +130,26 @@ CSS = r"""
 .lad .lv i,.lad .ar i{font-style:normal; font-size:10.5px; color:var(--ink-3)}
 .lad .terms{color:var(--ink-3); font-size:11.5px; white-space:nowrap}
 .lad .none{padding:14px 18px; color:var(--ink-3)}
+.lad tbody tr[data-i]{cursor:pointer}
 .lad tbody tr:hover{background:var(--panel-2)}
+.lad tbody tr.on{background:var(--panel-2)}
+.lad tbody tr.on td:first-child{border-left:3px solid var(--ink); padding-left:6px}
+.lad tr.diag td{padding:4px 0 12px}
+.lad .dwrap{overflow-x:auto; max-width:100%}
+.lad .cdiag{display:block; max-width:100%}
+.lad .cdiag .axis{stroke:var(--rule); stroke-width:1}
+.lad .cdiag .lev{stroke:var(--ink); stroke-width:2}
+.lad .cdiag .lev.fast{stroke:var(--accent)}
+.lad .cdiag .lev.ai{stroke-dasharray:4 3}
+.lad .cdiag .ip{stroke:var(--rule); stroke-width:1; stroke-dasharray:2 4}
+.lad .cdiag .hop{stroke:var(--ink-3); stroke-width:1}
+.lad .cdiag .head{fill:var(--ink-3)}
+.lad .cdiag text{font-family:Georgia,"Times New Roman",serif}
+.lad .cdiag .ax{font-size:10.5px; fill:var(--ink-3);
+  font-family:ui-monospace,Menlo,Consolas,monospace}
+.lad .cdiag .term{font-size:11.5px; fill:var(--ink)}
+.lad .cdiag .tau,.lad .cdiag .hoplab,.lad .cdiag .hopdet,.lad .cdiag .iplab,.lad .cdiag .cap{
+  font-size:10.5px; fill:var(--ink-3)}
 """
 
 BODY = r"""
@@ -250,7 +269,77 @@ function stateNote(L, i, tau){
   return "unpublished";
 }
 
-function ladderRow(sp, L){
+/* A Grotrian-style sketch of one chain: the levels it stops on, at their real energies, and
+   the hops between them. Drawn as inline SVG rather than on a canvas because it is small,
+   static, and text-heavy, and because inline SVG inherits the page's theme tokens. */
+function chainDiagram(sp, L){
+  const names = [L.start].concat(L.names);
+  const Es = [L.startE].concat(L.Es);
+  const taus = [null].concat(L.taus);
+  for (let i = 0; i < names.length; i++){
+    const hit = levelLookup(sp, names[i], Es[i]);
+    if (hit){ Es[i] = hit[0]; if (taus[i] == null) taus[i] = hit[1]; }
+  }
+  const n = Es.length, ip = DATA[sp] && DATA[sp].ion;
+  const padL = 58, padR = 18, padT = 22, padB = 46;
+  const W = padL + padR + n * 152, H = 292;
+  let lo = Math.min.apply(null, Es), hi = Math.max.apply(null, Es);
+  const raw = hi - lo || 1;
+  /* The limit belongs on the axis only when it is near the climb. For a doubly charged ion it
+     can sit 20 eV above the top rung, and drawing it would flatten the ladder into a line. */
+  const showIp = ip != null && ip > lo && ip < hi + 0.6 * raw;
+  if (showIp) hi = Math.max(hi, ip);
+  const pad = (hi - lo || 1) * 0.14;
+  lo -= pad; hi += pad;
+  const y = e => padT + (H - padT - padB) * (hi - e) / (hi - lo);
+  const x = i => padL + i * 152, w = 104;
+  const T = (px, py, t, cls, anchor) => '<text x="' + px.toFixed(1) + '" y="' + py.toFixed(1)
+        + '" class="' + cls + '"' + (anchor ? ' text-anchor="' + anchor + '"' : "") + '>'
+        + esc(t) + "</text>";
+
+  let g = '<svg class="cdiag" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H
+        + '" role="img" aria-label="level diagram for one chain">';
+
+  // energy axis: a tick at each level, plus the ionization limit where it is on scale
+  g += '<line class="axis" x1="' + (padL - 12) + '" y1="' + padT + '" x2="' + (padL - 12)
+     + '" y2="' + (H - padB) + '"/>';
+  if (showIp){
+    g += '<line class="ip" x1="' + (padL - 12) + '" y1="' + y(ip).toFixed(1) + '" x2="'
+       + (W - padR) + '" y2="' + y(ip).toFixed(1) + '"/>';
+    g += T(W - padR, y(ip) - 4, "ionization limit " + ip.toFixed(2) + " eV", "iplab", "end");
+  }
+  for (let i = 0; i < n; i++)
+    g += T(padL - 17, y(Es[i]) + 3.5, Es[i].toFixed(3), "ax", "end");
+
+  for (let i = 0; i < n; i++){
+    const yi = y(Es[i]), xi = x(i);
+    const ai = i === n - 1 && L.ai;
+    const fast = taus[i] != null && taus[i] < 1e-9;
+    g += '<line class="lev' + (ai ? " ai" : "") + (fast ? " fast" : "") + '" x1="' + xi
+       + '" y1="' + yi.toFixed(1) + '" x2="' + (xi + w) + '" y2="' + yi.toFixed(1) + '"/>';
+    const term = names[i].split(" ").slice(1).join(" ") || names[i];
+    g += T(xi, yi - 7, term, "term");
+    g += T(xi, yi + 14, ai ? "above ionization" : stateNote(L, i, taus[i]), "tau");
+    if (i){
+      const x1 = x(i - 1) + w, y1 = y(Es[i - 1]), x2 = xi, y2 = yi;
+      g += '<line class="hop" x1="' + x1 + '" y1="' + y1.toFixed(1) + '" x2="' + x2
+         + '" y2="' + y2.toFixed(1) + '" marker-end="url(#ah)"/>';
+      const d = (Es[i] - Es[i - 1] - L.ms[i - 1] * HC / L.nms[i - 1]) * 1000;
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      g += T(mx, my - 8, L.ms[i - 1] + "γ " + nmLabel(L.nms[i - 1]) + " nm", "hoplab", "middle");
+      g += T(mx, my + 4, (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1) + " meV", "hopdet",
+             "middle");
+    }
+  }
+  g += '<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7"'
+     + ' markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="head"/></marker></defs>';
+  g += T(padL - 17, H - padB + 20, "eV", "ax", "end");
+  g += T(padL, H - padB + 20, sp + " · order " + L.order + " · " + L.ms.join("+") + " photons",
+         "cap");
+  return g + "</svg>";
+}
+
+function ladderRow(sp, L, IDX){
   const names = [L.start].concat(L.names);
   const Es = [L.startE].concat(L.Es);
   const taus = [null].concat(L.taus);
@@ -293,7 +382,7 @@ function ladderRow(sp, L){
     if (n < 2) leak = ' <span class="pill warn">last rung ' + n.toFixed(1)
                     + 'γ below ionization</span>';
   }
-  return '<tr><td>' + esc(sp) + (L.kind === "ground" ? ' <span class="pill">ground</span>' : "")
+  return '<tr data-i="' + IDX + '"><td>' + esc(sp) + (L.kind === "ground" ? ' <span class="pill">ground</span>' : "")
        + '</td><td class="num">' + L.order + '</td><td class="num">' + L.ms.join("+")
        + '</td><td class="num">' + L.det.toFixed(1) + ' meV</td>'
        + '<td><div class="chain">' + line + '</div><div class="terms">' + terms + '</div></td>'
@@ -338,6 +427,8 @@ function ladPass(L, f){
   return true;
 }
 
+let LROWS = [], LOPEN = -1;
+
 function drawLadders(){
   const f = ladFilters();
   const names = f.sp === "any" ? Object.keys(LAD) : [f.sp];
@@ -355,10 +446,12 @@ function drawLadders(){
   const mat = MAT.filter(m => live.has(m.spectrum));
   $('#lMat').innerHTML = mat.length ? mat.map(matRow).join("")
     : '<tr><td colspan="11" class="none">No species has a chain that passes these filters.</td></tr>';
-  $('#lLad').innerHTML = rows.length ? rows.map(r => ladderRow(r[0], r[1])).join("")
+  LROWS = rows; LOPEN = -1;
+  $('#lLad').innerHTML = rows.length ? rows.map((r, i) => ladderRow(r[0], r[1], i)).join("")
     : '<tr><td colspan="6" class="none">No chain passes these filters.</td></tr>';
   $('#lMatNote').textContent = mat.length + " of " + MAT.length + " species";
-  $('#lLadNote').textContent = rows.length + " chains shown, best first";
+  $('#lLadNote').textContent = rows.length
+    + " chains shown, best first — click one to draw it";
   $('#lCount').textContent = rows.length + " chains · " + live.size + " species";
 }
 
@@ -370,6 +463,20 @@ function initLadders(){
         '<option value="' + esc(m.spectrum) + '">' + esc(m.spectrum) + "</option>").join("");
   ["#lTop", "#lDet", "#lCol", "#lVer", "#lStart", "#lSp"].forEach(sel =>
     $(sel).addEventListener("change", drawLadders));
+  $('#lLad').addEventListener("click", e => {
+    const tr = e.target.closest("tr[data-i]");
+    if (!tr) return;
+    const i = +tr.dataset.i, again = LOPEN === i;
+    const open = $('#lLad').querySelector("tr.diag");
+    if (open) open.remove();
+    const lit = $('#lLad').querySelector("tr.on");
+    if (lit) lit.classList.remove("on");
+    if (again){ LOPEN = -1; return; }
+    LOPEN = i;
+    tr.classList.add("on");
+    tr.insertAdjacentHTML("afterend", '<tr class="diag"><td colspan="6"><div class="dwrap">'
+      + chainDiagram(LROWS[i][0], LROWS[i][1]) + "</div></td></tr>");
+  });
   drawLadders();
 }
 
