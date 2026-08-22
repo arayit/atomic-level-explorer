@@ -148,7 +148,7 @@ BODY = r"""
       <select id="lTop">
         <option value="any" selected>either</option>
         <option value="bound">bound &mdash; emits a photon</option>
-        <option value="ai">autoionizing &mdash; ends in an ion</option>
+        <option value="ai">above ionization &mdash; ends in an ion</option>
       </select>
     </label>
     <label>Closure
@@ -179,7 +179,7 @@ BODY = r"""
   <div class="scroll"><table>
     <thead><tr>
       <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Picosecond state</th>
-      <th>Lifetimes</th><th>Energy match</th><th>Hop strength</th><th>Order</th>
+      <th>Lifetimes</th><th>Energy match</th><th>Order</th>
       <th>Pattern</th><th>One colour</th><th>Reach</th>
     </tr></thead>
     <tbody id="lMat"></tbody>
@@ -241,7 +241,7 @@ function levelLookup(sp, name, approxE){
 }
 
 function stateNote(L, i, tau){
-  if (i === L.Es.length && L.ai) return "autoionizes";
+  if (i === L.Es.length && L.ai) return "above ionization";
   if (tau != null) return tauText(tau);
   if (i === 0) return L.kind === "ground" ? "ground state" : "metastable";
   return "unpublished";
@@ -270,8 +270,8 @@ function ladderRow(sp, L){
 
   let top;
   if (L.ai){
-    top = '<span class="muted">autoionizing</span> ' + esc(L.Es[L.Es.length - 1].toFixed(2))
-        + " eV";
+    top = '<span class="muted">above ionization</span> '
+        + esc(L.Es[L.Es.length - 1].toFixed(2)) + " eV";
   } else if (L.decay && L.fastTau != null && L.fastAt !== "intermediate"){
     top = '<span class="emit">emits ' + esc(nmLabel(HC / L.decay)) + " nm</span> · τ "
         + esc(tauText(L.fastTau));
@@ -287,23 +287,22 @@ function ladderRow(sp, L){
        + '<td>' + top + flag + '</td></tr>';
 }
 
-/* Where the ladder's picosecond state sits, and whether that lifetime was read or inferred.
-   Above the ionization limit no line list carries a width, so "autoionizes" is a statement
-   about the state's class, not a measured number. */
+/* Where the ladder's picosecond state sits, and its lifetime where one was measured. Above
+   the ionization limit no line list carries a width, so the column reports the fact -- the
+   level sits above the limit -- rather than the inference drawn from it. */
 const PS_WHERE = {intermediate: "mid-ladder", final: "top", both: "mid-ladder and top"};
 
 function psState(m){
   if (m.evidence === "measured")
     return (PS_WHERE[m.fast_rung_at] || "–") + " · "
          + (m.fast_rung_tau_s ? tauText(+m.fast_rung_tau_s) : "–");
-  if (m.evidence === "autoionizing") return "top · autoionizes";
+  if (m.evidence === "autoionizing") return "top · above ionization";
   return "–";
 }
 
 function matRow(m){
   const cells = [m.tier, m.spectrum, m.Z, m.prep_note, psState(m),
                  m.rung_lifetimes, m.closure + " · " + m.best_detuning_meV + " meV",
-                 m.hop_amplitude + (m.relative_amplitude ? " " + m.relative_amplitude : ""),
                  m.order, m.pattern, m.single_colour,
                  m.reach_eV_neutral_frame ? m.reach_eV_neutral_frame + " eV" : "–"];
   return '<tr class="t' + m.tier + '">'
@@ -342,7 +341,7 @@ function drawLadders(){
 
   const mat = MAT.filter(m => live.has(m.spectrum));
   $('#lMat').innerHTML = mat.length ? mat.map(matRow).join("")
-    : '<tr><td colspan="12" class="none">No species has a chain that passes these filters.</td></tr>';
+    : '<tr><td colspan="11" class="none">No species has a chain that passes these filters.</td></tr>';
   $('#lLad').innerHTML = rows.length ? rows.map(r => ladderRow(r[0], r[1])).join("")
     : '<tr><td colspan="6" class="none">No chain passes these filters.</td></tr>';
   $('#lMatNote').textContent = mat.length + " of " + MAT.length + " species";
