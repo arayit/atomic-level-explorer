@@ -82,11 +82,11 @@ def collect():
         lad[sp] = pick
 
     keep = ("tier", "spectrum", "element", "Z", "charge", "prep_note", "prep_cost", "evidence",
-            "fast_rung_at", "rung_lifetimes", "closure", "best_detuning_meV", "hop_amplitude",
+            "fast_rung_at", "fast_rung_tau_s", "rung_lifetimes", "closure",
+            "best_detuning_meV", "hop_amplitude",
             "relative_amplitude", "order", "pattern", "colours", "hops",
             "max_order", "ground_start",
-            "single_colour", "reach_eV_neutral_frame", "n_ladders",
-            "accidental_matches_per_hop", "truncated")
+            "single_colour", "reach_eV_neutral_frame", "n_ladders", "truncated")
     return [{k: r.get(k, "") for k in keep} for r in mat], lad
 
 
@@ -129,52 +129,18 @@ CSS = r"""
 .lad .lv i,.lad .ar i{font-style:normal; font-size:10.5px; color:var(--ink-3)}
 .lad .terms{color:var(--ink-3); font-size:11.5px; white-space:nowrap}
 .lad .none{padding:14px 18px; color:var(--ink-3)}
-.lad .gloss{margin:8px 0 0; display:grid; grid-template-columns:max-content minmax(0,1fr);
-  gap:2px 14px; max-width:100ch; font-size:12.5px}
-.lad .gloss dt{color:var(--ink); white-space:nowrap}
-.lad .gloss dd{margin:0; color:var(--ink-3)}
 .lad tbody tr:hover{background:var(--panel-2)}
 """
 
 BODY = r"""
 <section class="lad" id="view-ladders" hidden>
   <div class="intro">
-    <p>Every chain below starts on a level that holds population, climbs in hops of 2 or 3
-      photons of one colour, and lands on a real level. Each hop matches a measured level gap
-      to within the stated detuning, obeys the parity rule for that photon number, and obeys
-      |&Delta;J| &le; m. Every rung except the last outlives the intra-burst pulse spacing of
-      20&nbsp;ps, so the next pulse arrives at an occupied level.</p>
-    <p><b>Top state</b> is the axis to read first. A chain ending above the ionization limit
-      lands on an autoionizing resonance: intrinsically fast, but it decays by throwing out an
-      electron, so the ladder ends in an ion rather than a photon. A chain ending on a bound
-      level with a picosecond lifetime ends in EUV light instead, and the emitted wavelength is
-      given. Those exist only in ions &mdash; ionizing once roughly doubles the ionization
-      limit while the level structure keeps its shape, so states that autoionize in the neutral
-      sit safely below the limit one step up the isoelectronic sequence.</p>
-    <dl class="gloss">
-      <dt>Rung</dt><dd>a real level the ladder stops on &mdash; one per arrow, plus the
-        state it starts from.</dd>
-      <dt>Pattern / order</dt><dd>photons absorbed at each hop, and their sum.
-        <span class="mono">3+3</span> is order 6.</dd>
-      <dt>Energy match</dt><dd>how far a level gap sits from the photon energy that has to
-        bridge it. Under 25&nbsp;meV closes on driver tuning alone; the search allows
-        150&nbsp;meV, which is roughly the chirp and AC&nbsp;Stark budget.</dd>
-      <dt>Hop strength</dt><dd>whether a hop is strong, which is a different question from
-        whether it is allowed. A two-photon hop climbs through a virtual point, and its rate
-        depends on how close real levels lie to that point; the estimate here is built from
-        the one-photon oscillator strengths of the same atom and spans eight orders of
-        magnitude, so it ranks hops rather than measuring them.</dd>
-      <dt>Lifetimes</dt><dd>computed as
-        <span class="mono">1/&Sigma;A<sub>ki</sub></span> over the decay channels NIST lists,
-        so a level whose channels are only partly covered reads as an upper bound. Deciding
-        whether a rung holds population uses a conservative floor instead,
-        <span class="mono">&tau;&thinsp;k/n</span> for k of n channels known. A rung marked
-        <i>unpublished</i> has no A-value at all: below the ionization limit that almost always
-        means far longer than 20&nbsp;ps, but it is assumed rather than read.</dd>
-      <dt>Chance fits</dt><dd>how many levels fall inside one 150&nbsp;meV window by accident.
-        Fe&nbsp;I sits at 16 &mdash; aim anywhere and something is there, so an energy match
-        proves nothing. Hg&nbsp;II sits at 0.7, where a match means something.</dd>
-    </dl>
+    <p>Chains climb from a level that holds population in hops of 2 or 3 photons of one
+      colour, each hop matching a measured level gap and obeying the parity and
+      |&Delta;J|&nbsp;&le;&nbsp;m rules for that photon number, with every rung but the last
+      outliving the 20&nbsp;ps intra-burst spacing.</p>
+    <p>A chain ending above the ionization limit ends in an ion rather than a photon. One
+      ending on a bound picosecond level emits instead, and the wavelength is given.</p>
   </div>
 
   <form class="controls" onsubmit="return false">
@@ -212,9 +178,9 @@ BODY = r"""
   <h2>Materials <span class="muted" id="lMatNote"></span></h2>
   <div class="scroll"><table>
     <thead><tr>
-      <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Fast state</th>
-      <th>State lifetimes</th><th>Energy match</th><th>Hop strength</th><th>Order</th>
-      <th>Pattern</th><th>One colour</th><th>Reach</th><th>Chance fits</th>
+      <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Picosecond state</th>
+      <th>Lifetimes</th><th>Energy match</th><th>Hop strength</th><th>Order</th>
+      <th>Pattern</th><th>One colour</th><th>Reach</th>
     </tr></thead>
     <tbody id="lMat"></tbody>
   </table></div>
@@ -321,16 +287,27 @@ function ladderRow(sp, L){
        + '<td>' + top + flag + '</td></tr>';
 }
 
+/* Where the ladder's picosecond state sits, and whether that lifetime was read or inferred.
+   Above the ionization limit no line list carries a width, so "autoionizes" is a statement
+   about the state's class, not a measured number. */
+const PS_WHERE = {intermediate: "mid-ladder", final: "top", both: "mid-ladder and top"};
+
+function psState(m){
+  if (m.evidence === "measured")
+    return (PS_WHERE[m.fast_rung_at] || "–") + " · "
+         + (m.fast_rung_tau_s ? tauText(+m.fast_rung_tau_s) : "–");
+  if (m.evidence === "autoionizing") return "top · autoionizes";
+  return "–";
+}
+
 function matRow(m){
-  const cells = [m.tier, m.spectrum, m.Z, m.prep_note,
-                 m.evidence + (m.fast_rung_at ? " (" + m.fast_rung_at + ")" : ""),
+  const cells = [m.tier, m.spectrum, m.Z, m.prep_note, psState(m),
                  m.rung_lifetimes, m.closure + " · " + m.best_detuning_meV + " meV",
                  m.hop_amplitude + (m.relative_amplitude ? " " + m.relative_amplitude : ""),
                  m.order, m.pattern, m.single_colour,
-                 m.reach_eV_neutral_frame ? m.reach_eV_neutral_frame + " eV" : "–",
-                 m.accidental_matches_per_hop];
+                 m.reach_eV_neutral_frame ? m.reach_eV_neutral_frame + " eV" : "–"];
   return '<tr class="t' + m.tier + '">'
-       + cells.map((c, i) => '<td' + ([2, 8, 9, 12].includes(i) ? ' class="num"' : "") + '>'
+       + cells.map((c, i) => '<td' + ([2, 8, 9].includes(i) ? ' class="num"' : "") + '>'
                              + esc(String(c)) + '</td>').join("") + '</tr>';
 }
 
@@ -365,7 +342,7 @@ function drawLadders(){
 
   const mat = MAT.filter(m => live.has(m.spectrum));
   $('#lMat').innerHTML = mat.length ? mat.map(matRow).join("")
-    : '<tr><td colspan="13" class="none">No species has a chain that passes these filters.</td></tr>';
+    : '<tr><td colspan="12" class="none">No species has a chain that passes these filters.</td></tr>';
   $('#lLad').innerHTML = rows.length ? rows.map(r => ladderRow(r[0], r[1])).join("")
     : '<tr><td colspan="6" class="none">No chain passes these filters.</td></tr>';
   $('#lMatNote').textContent = mat.length + " of " + MAT.length + " species";
