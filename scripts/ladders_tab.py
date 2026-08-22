@@ -181,8 +181,9 @@ BODY = r"""
       </select>
     </label>
     <label>Colours
-      <select id="lCol"><option value="any" selected>any</option>
-        <option value="one">one colour only</option></select>
+      <select id="lCol"><option value="9" selected>any number</option>
+        <option value="1">one only</option><option value="2">two or fewer</option>
+        <option value="3">three or fewer</option></select>
     </label>
     <label>Rung lifetimes
       <select id="lVer"><option value="any" selected>any</option>
@@ -202,7 +203,7 @@ BODY = r"""
     <thead><tr>
       <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Picosecond state</th>
       <th>Lifetimes</th><th>Energy match</th><th>Order</th>
-      <th>Pattern</th><th>One colour</th><th>Reach</th>
+      <th>Pattern</th><th>Colours</th><th>Reach</th>
     </tr></thead>
     <tbody id="lMat"></tbody>
   </table></div>
@@ -210,8 +211,8 @@ BODY = r"""
   <h2>Chains <span class="muted" id="lLadNote"></span></h2>
   <div class="scroll"><table>
     <thead><tr>
-      <th>Species</th><th>Order</th><th>Pattern</th><th>Worst match</th><th>Chain</th>
-      <th>Top state</th>
+      <th>Species</th><th>Order</th><th>Pattern</th><th>Colours</th><th>Worst match</th>
+      <th>Chain</th><th>Top state</th>
     </tr></thead>
     <tbody id="lLad"></tbody>
   </table></div>
@@ -449,6 +450,7 @@ function ladderRow(sp, L, IDX){
   }
   return '<tr data-i="' + IDX + '"><td>' + esc(sp) + (L.kind === "ground" ? ' <span class="pill">ground</span>' : "")
        + '</td><td class="num">' + L.order + '</td><td class="num">' + L.ms.join("+")
+       + '</td><td class="num">' + new Set(L.nms).size
        + '</td><td class="num">' + L.det.toFixed(1) + ' meV</td>'
        + '<td><div class="chain">' + line + '</div><div class="terms">' + terms + '</div></td>'
        + '<td>' + top + flag + leak + '</td></tr>';
@@ -467,10 +469,20 @@ function psState(m){
   return "–";
 }
 
-function matRow(m){
-  const cells = [m.tier, m.spectrum, m.Z, m.prep_note, psState(m),
-                 m.rung_lifetimes, m.closure + " · " + m.best_detuning_meV + " meV",
-                 m.order, m.pattern, m.single_colour,
+/* With a filter on, the species' overall best chain may be one the filter just excluded, so
+   the row is rebuilt from the best chain that survived. Preparation, tier and reach stay as
+   they are: those are properties of the species, not of one chain. */
+function matRow(m, L){
+  const det = L ? L.det : +m.best_detuning_meV;
+  const band = det <= 25 ? "A" : (det <= 60 ? "B" : "C");
+  const ps = L ? psState({evidence: L.ev, fast_rung_at: L.fastAt, fast_rung_tau_s: L.fastTau})
+               : psState(m);
+  const life = L ? (L.unver ? L.unver + " rung(s) unpublished" : "all measured")
+                 : m.rung_lifetimes;
+  const cells = [m.tier, m.spectrum, m.Z, m.prep_note, ps, life,
+                 band + " · " + det.toFixed(1) + " meV",
+                 L ? L.order : m.order, L ? L.ms.join("+") : m.pattern,
+                 L ? new Set(L.nms).size : new Set(String(m.colours).split("+")).size,
                  m.reach_eV_neutral_frame ? m.reach_eV_neutral_frame + " eV" : "–"];
   return '<tr class="t' + m.tier + '">'
        + cells.map((c, i) => '<td' + ([2, 8, 9].includes(i) ? ' class="num"' : "") + '>'
@@ -478,7 +490,7 @@ function matRow(m){
 }
 
 function ladFilters(){
-  return {top: $('#lTop').value, det: +$('#lDet').value, col: $('#lCol').value,
+  return {top: $('#lTop').value, det: +$('#lDet').value, col: +$('#lCol').value,
           ver: $('#lVer').value, kind: $('#lStart').value, sp: $('#lSp').value};
 }
 
@@ -486,7 +498,7 @@ function ladPass(L, f){
   if (f.top === "bound" && L.ai) return false;
   if (f.top === "ai" && !L.ai) return false;
   if (L.det > f.det) return false;
-  if (f.col === "one" && new Set(L.nms).size !== 1) return false;
+  if (new Set(L.nms).size > f.col) return false;
   if (f.ver === "all" && L.unver) return false;
   if (f.kind !== "any" && L.kind !== f.kind) return false;
   return true;
@@ -508,12 +520,14 @@ function drawLadders(){
                    || (emits(x[1]) ? (y[1].decay - x[1].decay) : 0)
                    || (x[1].ai - y[1].ai) || (y[1].order - x[1].order) || (x[1].det - y[1].det));
 
+  const pick = {};                              // best surviving chain per species
+  for (const r of rows) if (!(r[0] in pick)) pick[r[0]] = r[1];
   const mat = MAT.filter(m => live.has(m.spectrum));
-  $('#lMat').innerHTML = mat.length ? mat.map(matRow).join("")
+  $('#lMat').innerHTML = mat.length ? mat.map(m => matRow(m, pick[m.spectrum])).join("")
     : '<tr><td colspan="11" class="none">No species has a chain that passes these filters.</td></tr>';
   LROWS = rows; LOPEN = -1;
   $('#lLad').innerHTML = rows.length ? rows.map((r, i) => ladderRow(r[0], r[1], i)).join("")
-    : '<tr><td colspan="6" class="none">No chain passes these filters.</td></tr>';
+    : '<tr><td colspan="7" class="none">No chain passes these filters.</td></tr>';
   $('#lMatNote').textContent = mat.length + " of " + MAT.length + " species";
   $('#lLadNote').textContent = rows.length
     + " chains shown, best first — click one to draw it";
@@ -539,7 +553,7 @@ function initLadders(){
     if (again){ LOPEN = -1; return; }
     LOPEN = i;
     tr.classList.add("on");
-    tr.insertAdjacentHTML("afterend", '<tr class="diag"><td colspan="6"><div class="dwrap">'
+    tr.insertAdjacentHTML("afterend", '<tr class="diag"><td colspan="7"><div class="dwrap">'
       + chainDiagram(LROWS[i][0], LROWS[i][1]) + "</div></td></tr>");
   });
   drawLadders();
