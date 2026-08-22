@@ -308,6 +308,9 @@ function initLadders(){
   drawLadders();
 }
 
+/* Boot lives at the very end of the combined script. MAT and LAD are const, so the level
+   view's boot block -- which runs earlier in the same script -- cannot touch them: reading a
+   const before its declaration executes is a ReferenceError, not a hoisted undefined. */
 function showTab(which){
   const lv = which === "levels";
   $('#view-levels').hidden = !lv;
@@ -316,4 +319,8 @@ function showTab(which){
   $('#tab-ladders').setAttribute("aria-selected", String(!lv));
   if (lv) requestAnimationFrame(draw);
 }
+
+$('#tab-levels').addEventListener('click', () => showTab('levels'));
+$('#tab-ladders').addEventListener('click', () => showTab('ladders'));
+initLadders();
 """

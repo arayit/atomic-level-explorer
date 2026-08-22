@@ -1087,13 +1087,9 @@ $('#reset').addEventListener('click', () => { pinned = null; resetView(); render
 window.addEventListener('resize', draw);
 matchMedia('(prefers-color-scheme:dark)').addEventListener('change', draw);
 
-$('#tab-levels').addEventListener('click', () => showTab('levels'));
-$('#tab-ladders').addEventListener('click', () => showTab('ladders'));
-
 buildRail();
 select(Object.keys(DATA).find(s => DATA[s].lv.some(r => inWin(r[4]))) || Object.keys(DATA)[0]);
 setLambda(lamNm, 'init');
-initLadders();
 """
 
 
