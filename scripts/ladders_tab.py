@@ -269,14 +269,47 @@ function stateNote(L, i, tau){
   return "unpublished";
 }
 
+/* Text metrics for the diagram. A canvas 2D context measures the same string in the same
+   font the SVG will render it in, so the boxes below are the real ones rather than a guess at
+   average glyph width. Falls back to an estimate where no canvas exists. */
+const _mc = (() => { try { return document.createElement("canvas").getContext("2d"); }
+                     catch (e) { return null; } })();
+const SERIF = 'Georgia,"Times New Roman",Times,serif';
+const MONO = 'ui-monospace,Menlo,Consolas,monospace';
+function textW(t, px, mono){
+  if (_mc){ _mc.font = px + "px " + (mono ? MONO : SERIF); return _mc.measureText(t).width; }
+  return String(t).length * px * (mono ? 0.6 : 0.52);
+}
+
+const overlap = (a, b) => a.x < b.x + b.w && b.x < a.x + a.w &&
+                          a.y < b.y + b.h && b.y < a.y + a.h;
+
+/* Segment against axis-aligned box: true if either end is inside, or the segment crosses any
+   edge. Used to keep a hop's label off the arrow that hop draws. */
+function segHitsBox(s, b){
+  const inside = (px, py) => px >= b.x && px <= b.x + b.w && py >= b.y && py <= b.y + b.h;
+  if (inside(s.x1, s.y1) || inside(s.x2, s.y2)) return true;
+  const cross = (ax, ay, bx, by, cx, cy, dx, dy) => {
+    const d = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx);
+    if (!d) return false;
+    const t = ((cx - ax) * (dy - cy) - (cy - ay) * (dx - cx)) / d;
+    const u = ((cx - ax) * (by - ay) - (cy - ay) * (bx - ax)) / d;
+    return t >= 0 && t <= 1 && u >= 0 && u <= 1;
+  };
+  const e = [[b.x, b.y, b.x + b.w, b.y], [b.x + b.w, b.y, b.x + b.w, b.y + b.h],
+             [b.x + b.w, b.y + b.h, b.x, b.y + b.h], [b.x, b.y + b.h, b.x, b.y]];
+  return e.some(q => cross(s.x1, s.y1, s.x2, s.y2, q[0], q[1], q[2], q[3]));
+}
+
 /* A Grotrian-style sketch of one chain: the levels it stops on, at their real energies, and
    the hops between them. Inline SVG rather than canvas because it is small, static and
    text-heavy, and because inline SVG inherits the page's theme tokens.
 
-   Layout keeps two label bands apart. Everything belonging to a level -- its term and its
-   lifetime -- hangs BELOW its line and grows rightwards from it; everything belonging to a hop
-   sits in the gap between two lines. A rising arrow puts its labels above the lower level's
-   line, so the two bands never share space. */
+   Level labels are placed first and treated as fixed -- each hangs under its own line and grows
+   rightwards inside its own column. Each hop's label is then placed by trying candidate
+   positions around its arrow until one collides with nothing: not the level labels, not an
+   earlier hop's label, and not any arrow. Hand-tuned offsets only work until a chain arrives
+   with a gap the rule did not anticipate. */
 function chainDiagram(sp, L){
   const names = [L.start].concat(L.names);
   const Es = [L.startE].concat(L.Es);
@@ -286,9 +319,9 @@ function chainDiagram(sp, L){
     if (hit){ Es[i] = hit[0]; if (taus[i] == null) taus[i] = hit[1]; }
   }
   const n = Es.length, ip = DATA[sp] && DATA[sp].ion;
-  const PITCH = 196, LW = 76;                 // column pitch, and the drawn width of a level
-  const padL = 16, padR = 170, padT = 30, padB = 54;
-  const W = padL + (n - 1) * PITCH + LW + padR, H = 320;
+  const PITCH = 196, LW = 76;
+  const padL = 16, padR = 170, padT = 34, padB = 54;
+  const W = padL + (n - 1) * PITCH + LW + padR, H = 330;
   let lo = Math.min.apply(null, Es), hi = Math.max.apply(null, Es);
   const raw = hi - lo || 1;
   /* The limit belongs on the axis only when it is near the climb. For a doubly charged ion it
@@ -299,52 +332,76 @@ function chainDiagram(sp, L){
   lo -= pad; hi += pad;
   const y = e => padT + (H - padT - padB) * (hi - e) / (hi - lo);
   const x = i => padL + i * PITCH;
-  const T = (px, py, t, cls, anchor) => '<text x="' + px.toFixed(1) + '" y="' + py.toFixed(1)
-        + '" class="' + cls + '"' + (anchor ? ' text-anchor="' + anchor + '"' : "") + '>'
-        + esc(t) + "</text>";
+
+  const taken = [], segs = [];
+  let g = "";
+  /* px is the baseline x, py the baseline y; anchor "middle" and "end" shift the box. */
+  function put(px, py, t, cls, size, mono, anchor){
+    const w = textW(t, size, mono);
+    const bx = anchor === "middle" ? px - w / 2 : (anchor === "end" ? px - w : px);
+    taken.push({x: bx - 2, y: py - size * 0.82 - 1, w: w + 4, h: size * 1.12 + 2});
+    g += '<text x="' + px.toFixed(1) + '" y="' + py.toFixed(1) + '" class="' + cls + '"'
+       + (anchor ? ' text-anchor="' + anchor + '"' : "") + ">" + esc(t) + "</text>";
+  }
   const short = t => t.length > 26 ? t.slice(0, 25) + "…" : t;
 
-  let g = '<svg class="cdiag" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H
-        + '" role="img" aria-label="level diagram for one chain">'
+  let head = '<svg class="cdiag" viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="'
+        + H + '" role="img" aria-label="level diagram for one chain">'
         + '<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7"'
         + ' markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" class="head"/></marker>'
         + "</defs>";
 
   if (showIp){
-    g += '<line class="ip" x1="' + padL + '" y1="' + y(ip).toFixed(1) + '" x2="' + (W - 8)
-       + '" y2="' + y(ip).toFixed(1) + '"/>'
-       /* Left, not right: a chain that tops out above the limit puts its last level's labels
-          hard against the right edge, at almost exactly this height. The far left is the
-          lowest column, which by construction sits well below the limit. */
-       + T(padL, y(ip) - 5, "ionization limit " + ip.toFixed(2) + " eV", "iplab");
+    head += '<line class="ip" x1="' + padL + '" y1="' + y(ip).toFixed(1) + '" x2="' + (W - 8)
+          + '" y2="' + y(ip).toFixed(1) + '"/>';
+    put(padL, y(ip) - 5, "ionization limit " + ip.toFixed(2) + " eV", "iplab", 10.5, false);
   }
 
   for (let i = 0; i < n; i++){
     const yi = y(Es[i]), xi = x(i);
     const ai = i === n - 1 && L.ai;
     const fast = taus[i] != null && taus[i] < 1e-9;
-    g += '<line class="lev' + (ai ? " ai" : "") + (fast ? " fast" : "") + '" x1="' + xi
-       + '" y1="' + yi.toFixed(1) + '" x2="' + (xi + LW) + '" y2="' + yi.toFixed(1) + '"/>'
-       + T(xi, yi - 7, Es[i].toFixed(3) + " eV", "ax")
-       + T(xi, yi + 15, short(names[i].split(" ").slice(1).join(" ") || names[i]), "term")
-       + T(xi, yi + 28, ai ? "above ionization" : stateNote(L, i, taus[i]), "tau");
-
-    if (i){
-      const x1 = x(i - 1) + LW, y1 = y(Es[i - 1]), y2 = yi;
-      g += '<line class="hop" x1="' + x1 + '" y1="' + y1.toFixed(1) + '" x2="' + xi
-         + '" y2="' + y2.toFixed(1) + '" marker-end="url(#ah)"/>';
-      const d = (Es[i] - Es[i - 1] - L.ms[i - 1] * HC / L.nms[i - 1]) * 1000;
-      const mx = (x1 + xi) / 2;
-      /* A hop between two nearly equal energies draws a nearly horizontal arrow, and its
-         midpoint then lands on the levels' own label band. Lift the labels clear instead. */
-      const my = Math.abs(y1 - y2) > 34 ? (y1 + y2) / 2 : Math.min(y1, y2) - 20;
-      g += T(mx, my - 7, L.ms[i - 1] + "γ " + nmLabel(L.nms[i - 1]) + " nm", "hoplab", "middle")
-         + T(mx, my + 5, (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1) + " meV", "hopdet",
-             "middle");
-    }
+    head += '<line class="lev' + (ai ? " ai" : "") + (fast ? " fast" : "") + '" x1="' + xi
+          + '" y1="' + yi.toFixed(1) + '" x2="' + (xi + LW) + '" y2="' + yi.toFixed(1) + '"/>';
+    put(xi, yi - 8, Es[i].toFixed(3) + " eV", "ax", 10.5, true);
+    put(xi, yi + 16, short(names[i].split(" ").slice(1).join(" ") || names[i]), "term", 11.5);
+    put(xi, yi + 29, ai ? "above ionization" : stateNote(L, i, taus[i]), "tau", 10.5);
+    if (i) segs.push({x1: x(i - 1) + LW, y1: y(Es[i - 1]), x2: xi, y2: yi});
   }
-  g += T(padL, H - 14, sp + " · order " + L.order + " · " + L.ms.join("+") + " photons", "cap");
-  return g + "</svg>";
+  for (const s of segs)
+    head += '<line class="hop" x1="' + s.x1 + '" y1="' + s.y1.toFixed(1) + '" x2="' + s.x2
+          + '" y2="' + s.y2.toFixed(1) + '" marker-end="url(#ah)"/>';
+
+  put(padL, H - 14, sp + " · order " + L.order + " · " + L.ms.join("+") + " photons",
+      "cap", 10.5);
+
+  for (let i = 1; i < n; i++){
+    const s = segs[i - 1];
+    const lab = [L.ms[i - 1] + "γ " + nmLabel(L.nms[i - 1]) + " nm",
+                 ((Es[i] - Es[i - 1] - L.ms[i - 1] * HC / L.nms[i - 1]) * 1000 >= 0 ? "+" : "−")
+                 + Math.abs((Es[i] - Es[i - 1] - L.ms[i - 1] * HC / L.nms[i - 1]) * 1000)
+                       .toFixed(1) + " meV"];
+    const w = Math.max(textW(lab[0], 10.5), textW(lab[1], 10.5)), h = 25;
+    const mx = (s.x1 + s.x2) / 2, my = (s.y1 + s.y2) / 2;
+    const top = Math.min(s.y1, s.y2), bot = Math.max(s.y1, s.y2);
+    const len = Math.hypot(s.x2 - s.x1, s.y2 - s.y1) || 1;
+    const nx = (s.y2 - s.y1) / len, ny = -(s.x2 - s.x1) / len;   // normal, pointing up-left
+    const cand = [[mx, top - 18], [mx, top - 34],
+                  [mx + nx * 26, my + ny * 26], [mx + nx * 42, my + ny * 42],
+                  [mx - nx * 26, my - ny * 26], [mx - nx * 42, my - ny * 42],
+                  [mx, bot + 30], [mx, top - 50], [mx, bot + 46]];
+    let pick = cand[0];
+    for (const c of cand){
+      const box = {x: c[0] - w / 2 - 3, y: c[1] - h / 2 - 3, w: w + 6, h: h + 6};
+      if (box.x < 2 || box.x + box.w > W - 2 || box.y < 2 || box.y + box.h > H - 2) continue;
+      if (taken.some(t => overlap(box, t))) continue;
+      if (segs.some(q => segHitsBox(q, box))) continue;
+      pick = c; break;
+    }
+    put(pick[0], pick[1] - 1, lab[0], "hoplab", 10.5, false, "middle");
+    put(pick[0], pick[1] + 11, lab[1], "hopdet", 10.5, false, "middle");
+  }
+  return head + g + "</svg>";
 }
 
 function ladderRow(sp, L, IDX){
