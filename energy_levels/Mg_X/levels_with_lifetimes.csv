@@ -1,0 +1,59 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Mg X,Mg,9,1s2.2s,2S,0.5,2,0.0,0.0,even,,no,367.489,,,,,,,,,,L4995
+Mg X,Mg,9,1s2.2p,2P*,0.5,2,19.83922,0.00014,odd,,no,367.489,1.4388489208633094e-09,"ASD 1/sum(Aki), J-resolved",1.4388489208633094e-09,1/1,yes,19.83922,19.83922,,,u57
+Mg X,Mg,9,1s2.2p,2P*,1.5,4,20.33202,0.0001,odd,,no,367.489,1.3315579227696405e-09,"ASD 1/sum(Aki), J-resolved",1.3315579227696405e-09,1/1,yes,20.33202,20.33202,,,u57
+Mg X,Mg,9,1s2.3s,2S,0.5,2,208.628,,even,,no,367.489,9.803921568627451e-12,"ASD 1/sum(Aki), J-resolved",9.803921568627451e-12,2/2,yes,188.29598,188.78877999999997,,,
+Mg X,Mg,9,1s2.3p,2P*,0.5,2,214.061,,odd,,no,367.489,4.606416277232557e-12,"ASD 1/sum(Aki), J-resolved",4.606416277232557e-12,2/2,yes,214.061,214.061,,,
+Mg X,Mg,9,1s2.3p,2P*,1.5,4,214.224,,odd,,no,367.489,4.6275579404960835e-12,"ASD 1/sum(Aki), J-resolved",4.6275579404960835e-12,2/2,yes,214.224,214.224,,,
+Mg X,Mg,9,1s2.3d,2D,1.5,4,216.17,,even,,no,367.489,1.5220609546721556e-12,"ASD 1/sum(Aki), J-resolved",1.5220609546721556e-12,4/4,yes,196.33077999999998,196.33077999999998,,,
+Mg X,Mg,9,1s2.3d,2D,2.5,6,216.215,,even,,no,367.489,1.5267095624216808e-12,"ASD 1/sum(Aki), J-resolved",1.5267095624216808e-12,2/2,yes,195.88298,195.88298,,,
+Mg X,Mg,9,1s2.4s,2S,0.5,2,279.29,,even,,no,367.489,1.4626298083954952e-11,"ASD 1/sum(Aki), J-resolved",1.4626298083954952e-11,4/4,yes,258.95798,259.45078,,,
+Mg X,Mg,9,1s2.4p,2P*,0.5,2,281.463,,odd,,no,367.489,7.66406267363892e-12,"ASD 1/sum(Aki), J-resolved",7.66406267363892e-12,4/4,yes,281.463,281.463,,,
+Mg X,Mg,9,1s2.4p,2P*,1.5,4,281.463,,odd,,no,367.489,7.700298232550547e-12,"ASD 1/sum(Aki), J-resolved",7.700298232550547e-12,5/5,yes,281.463,281.463,,,
+Mg X,Mg,9,1s2.4d,2D,1.5,4,282.359,,even,,no,367.489,3.4305160685527022e-12,"ASD 1/sum(Aki), J-resolved",3.4305160685527022e-12,6/6,yes,262.51977999999997,262.51977999999997,,,
+Mg X,Mg,9,1s2.4d,2D,2.5,6,282.4,,even,,no,367.489,3.441138347835839e-12,"ASD 1/sum(Aki), J-resolved",3.441138347835839e-12,3/3,yes,262.06798,262.06798,,,
+Mg X,Mg,9,1s2.4f,2F*,2.5,6,282.443,,odd,,no,367.489,,,,,,,,,,
+Mg X,Mg,9,1s2.4f,2F*,3.5,8,282.453,,odd,,no,367.489,,,,,,,,,,
+Mg X,Mg,9,1s2.5s,2S,0.5,2,311.4,,even,,no,367.489,2.3741690408357074e-11,"ASD 1/sum(Aki), J-resolved",2.3741690408357074e-11,6/6,yes,291.06798,291.56077999999997,,,
+Mg X,Mg,9,1s2.5p,2P*,0.5,2,312.55,,odd,,no,367.489,1.2963922053122263e-11,"ASD 1/sum(Aki), J-resolved",1.2963922053122263e-11,6/6,yes,312.55,312.55,,,
+Mg X,Mg,9,1s2.5p,2P*,1.5,4,312.55,,odd,,no,367.489,1.2999649659441679e-11,"ASD 1/sum(Aki), J-resolved",1.2999649659441679e-11,8/8,yes,312.55,312.55,,,
+Mg X,Mg,9,1s2.5d,2D,1.5,4,312.99,,even,,no,367.489,6.562953937578985e-12,"ASD 1/sum(Aki), J-resolved",6.562953937578985e-12,8/8,yes,293.15078,293.15078,,,
+Mg X,Mg,9,1s2.5d,2D,2.5,6,313.01,,even,,no,367.489,6.583257366383559e-12,"ASD 1/sum(Aki), J-resolved",6.583257366383559e-12,4/4,yes,292.67798,292.67798,,,
+Mg X,Mg,9,1s2.5f,2F*,2.5,6,313.063,,odd,,no,367.489,,,,,,,,,,
+Mg X,Mg,9,1s2.5f,2F*,3.5,8,313.068,,odd,,no,367.489,,,,,,,,,,
+Mg X,Mg,9,1s2.6p,2P*,0.5,2,329.36,,odd,,no,367.489,2.0892528831689788e-11,"ASD 1/sum(Aki), J-resolved",2.0892528831689788e-11,7/7,yes,329.36,329.36,,,
+Mg X,Mg,9,1s2.6p,2P*,1.5,4,329.36,,odd,,no,367.489,2.0912364644719837e-11,"ASD 1/sum(Aki), J-resolved",2.0912364644719837e-11,10/10,yes,329.36,329.36,,,
+Mg X,Mg,9,1s2.6d,2D,1.5,4,329.65,,even,,no,367.489,1.1411713953425717e-11,"ASD 1/sum(Aki), J-resolved",1.1411713953425717e-11,10/10,yes,309.81077999999997,309.81077999999997,,,
+Mg X,Mg,9,1s2.6d,2D,2.5,6,329.65,,even,,no,367.489,1.1414188768036473e-11,"ASD 1/sum(Aki), J-resolved",1.1414188768036473e-11,5/5,yes,309.31798,309.31798,,,
+Mg X,Mg,9,1s2.7p,2P*,0.5,2,339.52,,odd,,no,367.489,3.245278120334913e-11,"ASD 1/sum(Aki), J-resolved",3.245278120334913e-11,8/8,yes,339.52,339.52,,,
+Mg X,Mg,9,1s2.7p,2P*,1.5,4,339.52,,odd,,no,367.489,3.244720029332269e-11,"ASD 1/sum(Aki), J-resolved",3.244720029332269e-11,12/12,yes,339.52,339.52,,,
+Mg X,Mg,9,1s2.7d,2D,1.5,4,339.67,,even,,no,367.489,1.7992060920355414e-11,"ASD 1/sum(Aki), J-resolved",1.7992060920355414e-11,12/12,yes,319.83078,319.83078,,,
+Mg X,Mg,9,1s2.7d,2D,2.5,6,339.67,,even,,no,367.489,1.8070089243002724e-11,"ASD 1/sum(Aki), J-resolved",1.8070089243002724e-11,6/6,yes,319.33798,319.33798,,,
+Mg X,Mg,9,1s2.8p,2P*,1.5,4,346.06,,odd,,no,367.489,4.768512557877821e-11,"ASD 1/sum(Aki), J-resolved",4.768512557877821e-11,14/14,yes,346.06,346.06,,,
+Mg X,Mg,9,1s2.8p,2P*,0.5,2,346.06,,odd,,no,367.489,4.768717215069146e-11,"ASD 1/sum(Aki), J-resolved",4.768717215069146e-11,9/9,yes,346.06,346.06,,,
+Mg X,Mg,9,1s2.9p,2P*,0.5,2,350.58,,odd,,no,367.489,6.831067695880866e-11,"ASD 1/sum(Aki), J-resolved",6.831067695880866e-11,9/9,yes,350.58,350.58,,,
+Mg X,Mg,9,1s2.9p,2P*,1.5,4,350.58,,odd,,no,367.489,6.82370281409504e-11,"ASD 1/sum(Aki), J-resolved",6.82370281409504e-11,14/14,yes,350.58,350.58,,,
+Mg X,Mg,9,1s.2s2,2S,0.5,2,1314.824,0.012,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.(2S).2s.2p.(3P*),4P*,0.5,2,1319.9818,0.0024,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L22456,L5679,L20125"
+Mg X,Mg,9,1s.(2S).2s.2p.(3P*),4P*,1.5,4,1320.1071,0.0,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,L20125
+Mg X,Mg,9,1s.(2S).2s.2p.(3P*),4P*,2.5,6,1320.4429,0.0024,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L22456,L5679,L20125"
+Mg X,Mg,9,1s.(2S).2s.2p.(3P*),2P*,0.5,2,1335.253,0.007,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.(2S).2s.2p.(3P*),2P*,1.5,4,1335.533,0.007,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,4P,0.5,2,1341.099,0.004,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L22456,L5679,L20125"
+Mg X,Mg,9,1s.2p2,4P,1.5,4,1341.3244,0.0017,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L22456,L5679,L20125"
+Mg X,Mg,9,1s.2p2,4P,2.5,6,1341.572,0.003,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L22456,L5679,L20125"
+Mg X,Mg,9,1s.(2S).2s.2p.(1P*),2P*,0.5,2,1342.446,0.009,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.(2S).2s.2p.(1P*),2P*,1.5,4,1342.535,0.008,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,2D,2.5,6,1350.635,0.011,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,2D,1.5,4,1350.752,0.012,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,2P,0.5,2,1353.55,0.007,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,2P,1.5,4,1354.023,0.007,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2p2,2S,0.5,2,1364.739,0.014,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Mg X,Mg,9,1s.2s.(3S).3p,2P*,1.5,4,1539.8,,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2s.(3S).3p,2P*,0.5,2,1539.8,,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2s.(1S).3p,2P*,0.5,2,1550.3,,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2s.(1S).3p,2P*,1.5,4,1550.3,,odd,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2p.(3P*).3p,2P,0.5,2,1552.0,,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2p.(3P*).3p,2P,1.5,4,1552.0,,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2p.(3P*).3p,2D,1.5,4,1557.4,,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,
+Mg X,Mg,9,1s.2p.(3P*).3p,2D,2.5,6,1557.4,,even,,yes,367.489,,autoionizing - not in any database,,,,,,,,

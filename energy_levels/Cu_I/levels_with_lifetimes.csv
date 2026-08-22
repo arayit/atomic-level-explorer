@@ -1,0 +1,361 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Cu I,Cu,0,3d10.4s,2S,0.5,2,0.0,0.0,even,,no,7.72638,,metastable - no allowed radiative channel,,,,,,,yes,L10559
+Cu I,Cu,0,3d9.4s2,2D,2.5,6,1.388948,3e-06,even,,no,7.72638,,metastable - no allowed radiative channel,,,,,,,yes,L10559c152
+Cu I,Cu,0,3d9.4s2,2D,1.5,4,1.6422256,2.4e-06,even,,no,7.72638,,metastable - no allowed radiative channel,,,,,,,yes,L10559c152
+Cu I,Cu,0,3d10.4p,2P*,0.5,2,3.7858977,2.4e-06,odd,,no,7.72638,7.18132854578097e-09,"ASD 1/sum(Aki), J-resolved",7.18132854578097e-09,2/2,yes,3.7858977,3.7858977,7.18133e-09,,L10559c152
+Cu I,Cu,0,3d10.4p,2P*,1.5,4,3.816692,2.2e-06,odd,,no,7.72638,7.055171440666008e-09,"ASD 1/sum(Aki), J-resolved",7.055171440666008e-09,3/3,yes,3.816692,3.816692,7.18133e-09,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4P*,2.5,6,4.837701,4e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4P*,1.5,4,4.973503,4e-06,odd,,no,7.72638,3.5842293906810036e-07,"ASD 1/sum(Aki), J-resolved",3.5842293906810036e-07,1/3,no,4.973503,4.973503,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4P*,0.5,2,5.076382,4e-06,odd,,no,7.72638,4.975124378109452e-07,"ASD 1/sum(Aki), J-resolved",4.975124378109452e-07,1/2,no,5.076382,5.076382,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4F*,4.5,10,5.072089,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4F*,3.5,8,5.10238,4e-06,odd,,no,7.72638,2.631578947368421e-06,"ASD 1/sum(Aki), J-resolved",2.631578947368421e-06,1/1,yes,3.713432,3.713432,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4F*,2.5,6,5.153147,4e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4F*,1.5,4,5.244851,4e-06,odd,,no,7.72638,1.4285714285714285e-05,"ASD 1/sum(Aki), J-resolved",1.4285714285714285e-05,1/2,no,5.244851,5.244851,,,L10559c152
+Cu I,Cu,0,3d10.5s,2S,0.5,2,5.3483348,2.1e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4D*,3.5,8,5.39505,4e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4D*,2.5,6,5.505682,4e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4D*,1.5,4,5.522772,4e-06,odd,,no,7.72638,2.941176470588235e-07,"ASD 1/sum(Aki), J-resolved",2.941176470588235e-07,2/3,no,5.522772,5.522772,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),4D*,0.5,2,5.568835,5e-06,odd,,no,7.72638,2.272727272727273e-08,"ASD 1/sum(Aki), J-resolved",2.272727272727273e-08,1/2,no,5.568835,5.568835,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),2F*,2.5,6,5.421363,4e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),2F*,3.5,8,5.574734,4e-06,odd,,no,7.72638,2.6595744680851066e-07,"ASD 1/sum(Aki), J-resolved",2.6595744680851066e-07,1/1,yes,4.185786,4.185786,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),2P*,0.5,2,5.681073,4e-06,odd,,no,7.72638,1.01010101010101e-08,"ASD 1/sum(Aki), J-resolved",1.01010101010101e-08,1/2,no,5.681073,5.681073,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),2P*,1.5,4,5.688311,4e-06,odd,,no,7.72638,1.0804970286331712e-08,"ASD 1/sum(Aki), J-resolved",1.0804970286331712e-08,2/3,no,5.688311,5.688311,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),*,1.5,4,5.724709,4e-06,odd,,no,7.72638,1.818181818181818e-08,"ASD 1/sum(Aki), J-resolved",1.818181818181818e-08,1/3,no,5.724709,5.724709,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(3P*),2D*,2.5,6,5.777459,4e-06,odd,,no,7.72638,1.282051282051282e-07,"ASD 1/sum(Aki), J-resolved",1.282051282051282e-07,1/2,no,4.388511,4.388511,,,L10559c152
+Cu I,Cu,0,3d10.5p,2P*,1.5,4,6.1227049,2.1e-06,odd,,no,7.72638,1.996007984031936e-08,"ASD 1/sum(Aki), J-resolved",1.996007984031936e-08,3/6,no,4.7337568999999995,6.1227049,1.99601e-08,,L18473c152
+Cu I,Cu,0,3d10.5p,2P*,0.5,2,6.1227444,9e-07,odd,,no,7.72638,1.0204081632653061e-07,"ASD 1/sum(Aki), J-resolved",1.0204081632653061e-07,1/5,no,6.1227444,6.1227444,1.99601e-08,,L18473c152
+Cu I,Cu,0,3d10.4d,2D,1.5,4,6.1911751,1.6e-06,even,,no,7.72638,1.3333333333333334e-08,"ASD 1/sum(Aki), J-resolved",1.3333333333333334e-08,2/5,no,2.4052773999999997,6.1911751,1.33333e-08,,"L18473c152,L10559"
+Cu I,Cu,0,3d10.4d,2D,2.5,6,6.1920252,1.6e-06,even,,no,7.72638,1.3333333333333334e-08,"ASD 1/sum(Aki), J-resolved",1.3333333333333334e-08,1/4,no,2.3753331999999996,6.1920252,1.33333e-08,,"L18473c152,L10559"
+Cu I,Cu,0,3d10.6s,2S,0.5,2,6.55241,4e-07,even,,no,7.72638,8.771929824561404e-08,"ASD 1/sum(Aki), J-resolved",8.771929824561404e-08,2/4,no,2.735718,2.7665123,8.77193e-08,,"L18473c152,L10559"
+Cu I,Cu,0,3d10.6p,2P*,1.5,4,6.7923584,6e-07,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6p,2P*,0.5,2,6.822573,9e-07,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.5d,2D,1.5,4,6.8671955,6e-07,even,,no,7.72638,5.263157894736842e-08,"ASD 1/sum(Aki), J-resolved",5.263157894736842e-08,1/5,no,3.0812978,6.8671955,5.26316e-08,,"L18473c152,L10559"
+Cu I,Cu,0,3d10.5d,2D,2.5,6,6.8676456,6e-07,even,,no,7.72638,4.761904761904762e-08,"ASD 1/sum(Aki), J-resolved",4.761904761904762e-08,1/3,no,3.0509536,6.8676456,5.26316e-08,,"L18473c152,L10559"
+Cu I,Cu,0,3d10.4f,2F*,3.5,8,6.8719921,1.6e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.4f,2F*,2.5,6,6.8723598,1.6e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2F*,3.5,8,6.946821,9e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2F*,2.5,6,7.205884,9e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2P*,1.5,4,6.985719,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2P*,0.5,2,7.236296,9e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2D*,2.5,6,7.02388,5e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.(2D).4s.4p.(1P*),2D*,1.5,4,7.276745,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.7s,2S,0.5,2,7.0263553,1.6e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7p,2P*,0.5,2,7.119078,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.7p,2P*,1.5,4,7.1847068,2.1e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6d,2D,1.5,4,7.1778166,1e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6d,2D,2.5,6,7.1780681,1.2e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.5f,2F*,2.5,6,7.1793195,7e-07,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.5f,2F*,3.5,8,7.1802167,7e-07,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.5g,2G,4.5,10,7.1816767,1.6e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.5g,2G,3.5,8,7.1816767,1.6e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.8s,2S,0.5,2,7.261618,1.4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.7d,2D,1.5,4,7.345981,3e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7d,2D,2.5,6,7.3461333,2.2e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6f,2F*,3.5,8,7.347225,3e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6f,2F*,2.5,6,7.3472875,2.5e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6g,2G,4.5,10,7.3481359,1.5e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6g,2G,3.5,8,7.3481359,1.5e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.6h,2H*,,22,7.3483475,1.9e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.8p,2P*,1.5,4,7.349162,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.8p,2P*,0.5,2,7.35508,7e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.9s,2S,0.5,2,7.395393,1.5e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.8d,2D,1.5,4,7.447174,1.9e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.8d,2D,2.5,6,7.447282,1.6e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.9p,2P*,1.5,4,7.447752,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.9p,2P*,0.5,2,7.449569,7e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.7f,2F*,3.5,8,7.4479138,1.2e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7f,2F*,2.5,6,7.4479334,1.7e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7g,2G,4.5,10,7.4485062,2e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7g,2G,3.5,8,7.4485062,2e-06,even,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.7h,2H*,,22,7.448643,4e-06,odd,,no,7.72638,,,,,,,,,,L18473c152
+Cu I,Cu,0,3d10.8f,2F*,2.5,6,7.51267,6e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.9d,2D,1.5,4,7.512763,1.9e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.9d,2D,2.5,6,7.512825,1e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.10p,2P*,1.5,4,7.512835,5e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.10p,2P*,0.5,2,7.51359,7e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.11p,2P*,1.5,4,7.55762,5e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.11p,2P*,0.5,2,7.557999,7e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.10d,2D,1.5,4,7.557694,2e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.10d,2D,2.5,6,7.557744,2.4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.12p,2P*,1.5,4,7.589709,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.12p,2P*,0.5,2,7.589923,7e-06,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.11d,2D,2.5,6,7.58984,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.13p,2P*,1.5,4,7.613467,9e-06,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.13p,2P*,0.5,2,7.613558,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.14p,2P*,1.5,4,7.63153,1.6e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.14p,2P*,0.5,2,7.631562,2.5e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.15p,2P*,1.5,4,7.645592,2.4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.15p,2P*,0.5,2,7.6456,3e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.16p,2P*,1.5,4,7.656732,2.4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.16p,2P*,0.5,2,7.65674,3e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.17p,2P*,,6,7.665725,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.18p,2P*,,6,7.673078,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.19p,2P*,,6,7.679171,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.20s,2S,0.5,2,7.68153,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.20p,2P*,,6,7.684278,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.21s,2S,0.5,2,7.68625,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.21p,2P*,,6,7.688595,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.22s,2S,0.5,2,7.69026,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.22p,2P*,,6,7.692282,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.23s,2S,0.5,2,7.69372,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.23p,2P*,,6,7.695452,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.24s,2S,0.5,2,7.696685,2e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.24p,2P*,,6,7.6982,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.25s,2S,0.5,2,7.69928,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.25p,2P*,,6,7.7006,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.26s,2S,0.5,2,7.701571,1e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.26p,2P*,,6,7.702704,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.27s,2S,0.5,2,7.70352,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.27p,2P*,,6,7.704557,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.28s,2S,0.5,2,7.705299,1e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.28p,2P*,,6,7.706209,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.29s,2S,0.5,2,7.706852,1e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.29p,2P*,,6,7.70768,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.30s,2S,0.5,2,7.70827,1e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.30p,2P*,,6,7.708993,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.31s,2S,0.5,2,7.709521,1e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.31p,2P*,,6,7.710172,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.32s,2S,0.5,2,7.710647,1e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.32p,2P*,,6,7.711242,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.33s,2S,0.5,2,7.71166,1e-05,even,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.33p,2P*,,6,7.712206,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.34s,2S,0.5,2,7.712595,1e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.34p,2P*,,6,7.713079,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.35s,2S,0.5,2,7.71342,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.35p,2P*,,6,7.713867,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.36s,2S,0.5,2,7.7142,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.36p,2P*,,6,7.714586,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.37s,2S,0.5,2,7.71485,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.37p,2P*,,6,7.715254,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.38s,2S,0.5,2,7.71551,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.38p,2P*,,6,7.715868,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.39s,2S,0.5,2,7.71609,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.39p,2P*,,6,7.716429,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.40s,2S,0.5,2,7.71662,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.40p,2P*,,6,7.716944,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.41s,2S,0.5,2,7.71712,4e-05,even,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.41p,2P*,,6,7.717424,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.42p,2P*,,6,7.717866,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.43p,2P*,,6,7.718274,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.44p,2P*,,6,7.718654,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.45p,2P*,,6,7.719014,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.46p,2P*,,6,7.719345,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.47p,2P*,,6,7.719654,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.48p,2P*,,6,7.719947,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.49p,2P*,,6,7.720211,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.50p,2P*,,6,7.720471,1e-05,odd,,no,7.72638,,,,,,,,,,L10559
+Cu I,Cu,0,3d10.51p,2P*,,6,7.720715,1e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.52p,2P*,,6,7.72093,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.53p,2P*,,6,7.72114,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.54p,2P*,,6,7.72133,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.55p,2P*,,6,7.72154,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.56p,2P*,,6,7.72171,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d10.57p,2P*,,6,7.72187,4e-05,odd,,no,7.72638,,,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,4D,3.5,8,7.737027,4e-06,even,,yes,7.72638,,autoionizing - not in any database,1.124859392575928e-08,4/9,no,2.6649380000000003,2.8993260000000003,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,4D,2.5,6,7.80459,6e-06,even,,yes,7.72638,,autoionizing - not in any database,3.125e-08,1/10,no,2.70221,2.966889,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,4D,1.5,4,7.883492,6e-06,even,,yes,7.72638,,autoionizing - not in any database,4.7169811320754715e-08,1/14,no,2.7303450000000007,4.097594300000001,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,4D,0.5,2,7.993553,4e-06,even,,yes,7.72638,,autoionizing - not in any database,2.127659574468085e-08,2/8,no,2.7487020000000006,3.0200500000000003,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,2D,2.5,6,8.016523,7e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5s,2D,1.5,4,8.0912,1.4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5s,2D,2.5,6,8.324631,1.4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5s,2D,1.5,4,8.427456,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4P*,1.5,4,8.71376,6e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4P*,0.5,2,8.80315,0.00011,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4F*,3.5,8,8.720675,9e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4F*,2.5,6,8.73029,9e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4D*,3.5,8,8.733648,9e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4D*,2.5,6,8.74849,9e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4D*,1.5,4,8.806574,6e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,4D*,0.5,2,9.00145,0.00014,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).4d,2P,1.5,4,8.784698,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2P,0.5,2,8.945645,1.4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).4d,2S,0.5,2,8.78474,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2G,4.5,10,8.785458,7e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2G,3.5,8,8.928948,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2F*,2.5,6,8.797899,6e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2F*,3.5,8,8.879001,1e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4S,1.5,4,8.802645,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).4d,2D,2.5,6,8.815053,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2D,1.5,4,8.939879,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2F,3.5,8,8.818726,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,2F,2.5,6,8.945607,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4G,5.5,12,8.81908,2.5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4G,4.5,10,8.92422,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4G,3.5,8,9.063585,7e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).4d,4G,2.5,6,9.075491,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4P,2.5,6,8.82497,4e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4P,0.5,2,8.912346,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4P,1.5,4,8.917846,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4D,3.5,8,8.836134,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4D,2.5,6,8.935167,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4D,1.5,4,9.063852,7e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4F,4.5,10,8.838904,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4F,3.5,8,8.938404,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4F,2.5,6,9.08862,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).4d,4F,1.5,4,9.090086,5e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2D*,2.5,6,8.895317,9e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2D*,1.5,4,8.92988,9e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2P*,1.5,4,8.9167,0.0001,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,2P*,0.5,2,9.01835,0.00014,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5p,*,1.5,4,8.9205,0.00012,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L1923
+Cu I,Cu,0,3d9.4s.(3D).6s,4D,3.5,8,9.174217,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6s,4D,2.5,6,9.21365,1.1e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6s,4D,1.5,4,9.304224,1.9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6s,4D,0.5,2,9.430786,1e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5p,2P*,1.5,4,9.20698,4e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5p,2P*,0.5,2,9.310131,1e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5p,2F*,3.5,8,9.217236,1e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5p,2F*,2.5,6,9.289453,1e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5p,2D*,,10,9.237791,7e-06,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2P,0.5,2,9.312387,9e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2P,1.5,4,9.331485,7e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6s,2D,2.5,6,9.319921,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6s,2D,1.5,4,9.464002,1.6e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2G,3.5,8,9.32439,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2G,4.5,10,9.34171,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2S,0.5,2,9.3467,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2D,1.5,4,9.35339,1.9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2D,2.5,6,9.354195,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2F,2.5,6,9.365294,1.1e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).4d,2F,3.5,8,9.369838,6e-06,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,2G,4.5,10,9.52503,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,2G,3.5,8,9.65826,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,2P,1.5,4,9.52587,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6p,4P*,1.5,4,9.536,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c155
+Cu I,Cu,0,3d9.4s.(3D).6p,4P*,0.5,2,9.63149,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).5d,2D,2.5,6,9.540515,1.9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,2D,1.5,4,9.66252,5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4S,1.5,4,9.5417,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).5d,2F,3.5,8,9.541852,1.6e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,2F,2.5,6,9.665726,1.5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4G,5.5,12,9.54854,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4G,4.5,10,9.652658,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4G,3.5,8,9.79329,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4G,2.5,6,9.80137,1.5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4P,2.5,6,9.550539,1.5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4P,0.5,2,9.64779,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4P,1.5,4,9.651066,2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4D,3.5,8,9.55523,1.6e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4D,2.5,6,9.659035,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4D,1.5,4,9.795181,1.7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4F,4.5,10,9.556763,1.9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4F,3.5,8,9.660768,1.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4F,2.5,6,9.809232,1.7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).5d,4F,1.5,4,9.809527,2.1e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).4f,*,,6,9.58235,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).4f,*,,6,9.58362,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).4f,*,,6,9.62401,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).7s,4D,3.5,8,9.70315,1.4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7s,4D,2.5,6,9.731085,2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7s,4D,1.5,4,9.826733,2.1e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7s,4D,0.5,2,9.959759,2.5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).6s,2D,2.5,6,9.714132,2.4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).6s,2D,1.5,4,9.742417,2.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6p,4D*,0.5,2,9.78141,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6p,2P*,0.5,2,9.78488,0.00015,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).7s,2D,2.5,6,9.827971,1.7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7s,2D,1.5,4,9.97532,0.0001,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).4f<5/2>,"(1,5/2)*",1.5,4,9.83908,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).6d,4S,1.5,4,9.87421,6e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7p,4P*,1.5,4,9.87504,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).7p,4P*,0.5,2,9.97805,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4G,5.5,12,9.87756,0.00011,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).6d,4G,4.5,10,9.98142,9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4P,2.5,6,9.87849,9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4D,3.5,8,9.88085,9e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4D,2.5,6,9.98597,7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4F,4.5,10,9.88149,7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,4F,3.5,8,9.98813,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).5f,*,,6,9.8938,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).8s,4D,3.5,8,9.95819,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).5f,*,,6,9.97138,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).6d,2G,3.5,8,9.98737,4e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,2F,2.5,6,9.98992,0.00012,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).6d,2D,1.5,4,9.99145,6e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).6p?,2P*,1.5,4,10.03579,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).6p?,2P*,0.5,2,10.11876,0.00024,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).8p,4P*,1.5,4,10.05321,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).8p,4P*,0.5,2,10.16497,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).6f,*,,6,10.06292,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5d,2D,2.5,6,10.07899,3e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5d,2D,1.5,4,10.081629,1.7e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5d,2F,2.5,6,10.08764,5e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).5d,2F,3.5,8,10.089364,2.2e-05,even,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D).7p?,4D*,0.5,2,10.11876,0.00024,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).7p,2P*,0.5,2,10.1224,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<1>).5f<5/2>,"(1,5/2)*",1.5,4,10.15107,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).5f<5/2>,"(1,5/2)*",1.5,4,10.1519,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).9p,4P*,1.5,4,10.16306,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).9p,4P*,0.5,2,10.26759,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).7f,*,,6,10.17716,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).6f,*,,6,10.18217,0.00016,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).10p<3/2>,"(3,3/2)*",1.5,4,10.22651,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).8f,*,,6,10.23064,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).11p<3/2>,"(3,3/2)*",1.5,4,10.27405,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).9f,*,,6,10.27567,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).7f,*,,6,10.27865,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).12p<3/2>,"(3,3/2)*",1.5,4,10.30436,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).10f,*,,6,10.30837,5e-05,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L9299
+Cu I,Cu,0,3d9.4s.(3D<1>).6f<5/2>,"(1,5/2)*",1.5,4,10.31997,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).13p<3/2>,"(3,3/2)*",1.5,4,10.32995,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).11f,*,,6,10.33201,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).10p<3/2>,"(2,3/2)*",0.5,2,10.33805,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).8f,*,,6,10.34461,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).14p<3/2>,"(3,3/2)*",1.5,4,10.34901,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).12f,*,,6,10.34995,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).15p<3/2>,"(3,3/2)*",1.5,4,10.36319,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).13f,*,,6,10.36389,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).16p<3/2>,"(3,3/2)*",1.5,4,10.37429,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).14f,*,,6,10.37507,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).17p<3/2>,"(3,3/2)*",1.5,4,10.37993,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).11p<3/2>,"(2,3/2)*",0.5,2,10.38446,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).18p<3/2>,"(3,3/2)*",1.5,4,10.38994,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).9f,*,,6,10.39203,0.00025,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).7p?,2P*,1.5,4,10.39203,0.00025,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).7p?,2P*,0.5,2,10.43094,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).19p<3/2>,"(3,3/2)*",1.5,4,10.39744,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<3>).20p<3/2>,"(3,3/2)*",1.5,4,10.4025,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<3>).21p<3/2>,"(3,3/2)*",1.5,4,10.40695,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D).9p,2P*,0.5,2,10.41167,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).12p<3/2>,"(2,3/2)*",0.5,2,10.41778,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).7f<5/2>,"(1,5/2)*",1.5,4,10.41946,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).10f,*,,6,10.42147,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).13p<3/2>,"(2,3/2)*",0.5,2,10.44298,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).11f,*,,6,10.44562,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).14p<3/2>,"(2,3/2)*",0.5,2,10.46139,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).12f,*,,6,10.4636,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).15p<3/2>,"(2,3/2)*",0.5,2,10.47616,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<2>).13f,*,,6,10.47783,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).10p,*,0.5,2,10.48076,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).8f<5/2>,"(1,5/2)*",1.5,4,10.48749,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).16p<3/2>,"(2,3/2)*",0.5,2,10.48962,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).17p<3/2>,"(2,3/2)*",0.5,2,10.49735,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).18p<3/2>,"(2,3/2)*",0.5,2,10.50491,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).19p<3/2>,"(2,3/2)*",0.5,2,10.5107,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).20p<3/2>,"(2,3/2)*",0.5,2,10.51604,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<2>).21p<3/2>,"(2,3/2)*",0.5,2,10.5206,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<1>).11p,*,0.5,2,10.52766,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).9f<5/2>,"(1,5/2)*",1.5,4,10.53248,0.00017,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).12p,*,0.5,2,10.56092,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).10f<5/2>,"(1,5/2)*",1.5,4,10.56462,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).8p?,2P*,1.5,4,10.57822,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).8p?,2P*,0.5,2,10.6002,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).13p,*,0.5,2,10.58663,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).11f<5/2>,"(1,5/2)*",1.5,4,10.58834,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).14p,*,0.5,2,10.60501,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<1>).12f<5/2>,"(1,5/2)*",1.5,4,10.60646,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<1>).15p,*,0.5,2,10.61936,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).13f<5/2>,"(1,5/2)*",1.5,4,10.62064,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).16p,*,0.5,2,10.63065,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).14f<5/2>,"(1,5/2)*",1.5,4,10.63166,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).17p,*,0.5,2,10.64022,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).18p,*,0.5,2,10.64773,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).19p,*,0.5,2,10.65349,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(3D<1>).20p,*,0.5,2,10.65917,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(3D<1>).21p,*,0.5,2,10.66338,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).9p?,2P*,1.5,4,10.68894,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).9p?,2P*,0.5,2,10.70194,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).10p?,2P*,1.5,4,10.75944,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).10p?,2P*,0.5,2,10.76784,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559
+Cu I,Cu,0,3d9.4s.(1D).11p?,2P*,1.5,4,10.80708,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559c152
+Cu I,Cu,0,3d9.4s.(1D).11p?,2P*,0.5,2,10.81311,0.00019,odd,,yes,7.72638,,autoionizing - not in any database,,,,,,,,L10559

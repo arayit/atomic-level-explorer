@@ -1,0 +1,13 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Ca XI,Ca,10,2s2.2p6,1S,0.0,1,0.0,0.0,even,,no,591.6,,,,,,,,,,L7185
+Ca XI,Ca,10,2s2.2p5.3s,3P*,1.0,3,348.51,,odd,,no,591.6,8.333333333333334e-12,"ASD 1/sum(Aki), J-resolved",8.333333333333334e-12,1/1,yes,348.51,348.51,,,
+Ca XI,Ca,10,2s2.2p5.3s,1P*,1.0,3,352.1,,odd,,no,591.6,5e-12,"ASD 1/sum(Aki), J-resolved",5e-12,1/1,yes,352.1,352.1,,,
+Ca XI,Ca,10,2s2.2p5.3d,3P*,1.0,3,396.66,,odd,,no,591.6,5.88235294117647e-11,"ASD 1/sum(Aki), J-resolved",5.88235294117647e-11,1/1,yes,396.66,396.66,,,
+Ca XI,Ca,10,2s2.2p5.3d,3D*,1.0,3,401.67,,odd,,no,591.6,2.0408163265306122e-13,"ASD 1/sum(Aki), J-resolved",2.0408163265306122e-13,1/1,yes,401.67,401.67,,,
+Ca XI,Ca,10,2s2.2p5.3d,1P*,1.0,3,407.2,,odd,,no,591.6,1.6129032258064516e-12,"ASD 1/sum(Aki), J-resolved",1.6129032258064516e-12,1/1,yes,407.2,407.2,,,
+Ca XI,Ca,10,2s.2p6.3p,3P*,1.0,3,457.86,,odd,,no,591.6,,,,,,,,,,
+Ca XI,Ca,10,2s.2p6.3p,1P*,1.0,3,459.84,,odd,,no,591.6,,,,,,,,,,
+Ca XI,Ca,10,2s2.2p5.4s,3P*,1.0,3,465.42,,odd,,no,591.6,,,,,,,,,,
+Ca XI,Ca,10,2s2.2p5.4s,1P*,1.0,3,468.9,,odd,,no,591.6,,,,,,,,,,
+Ca XI,Ca,10,2s2.2p5.4d,3D*,1.0,3,485.89,,odd,,no,591.6,,,,,,,,,,
+Ca XI,Ca,10,2s2.2p5.4d,1P*,1.0,3,489.54,,odd,,no,591.6,,,,,,,,,,

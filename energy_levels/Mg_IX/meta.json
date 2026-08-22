@@ -1,0 +1,23 @@
+{
+  "spectrum": "Mg IX",
+  "element": "Mg",
+  "charge": 8,
+  "n_levels": 89,
+  "ionization_eV": 327.99,
+  "max_level_eV": 1373.86,
+  "n_levels_above_ionization": 16,
+  "n_lines": 461,
+  "n_lines_classified": 461,
+  "n_lines_with_Aki": 444,
+  "n_levels_with_tau": 69,
+  "n_tau_from_asd": 69,
+  "n_tau_from_lidb": 0,
+  "n_metastable": 0,
+  "n_sub_ns": 66,
+  "tau_coverage": 0.775,
+  "sources": {
+    "asd_levels": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?de=0&spectrum=Mg+IX&units=1&format=2&output=0&page_size=15&multiplet_ordered=0&conf_out=on&term_out=on&level_out=on&unc_out=on&j_out=on&g_out=on&perc_out=on&biblio=on&temp=&submit=Retrieve+Data",
+    "asd_lines": "https://physics.nist.gov/cgi-bin/ASD/lines1.pl?spectra=Mg+IX&limits_type=0&low_w=&upp_w=&unit=1&de=0&format=2&line_out=0&en_unit=1&output=0&bibrefs=1&page_size=15&show_obs_wl=1&show_calc_wl=1&unc_out=1&order_out=0&show_av=3&A_out=0&intens_out=on&allowed_out=1&forbid_out=1&conf_out=on&term_out=on&enrg_out=on&J_out=on&g_out=on&submit=Retrieve+Data",
+    "lidb_states": null
+  }
+}

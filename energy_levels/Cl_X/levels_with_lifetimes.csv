@@ -1,0 +1,15 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Cl X,Cl,9,2s2.2p4,3P,2.0,5,0.0,0.0,even,,no,456.7,,,,,,,,,,L8473
+Cl X,Cl,9,2s2.2p4,3P,1.0,3,1.3449,,even,,no,456.7,0.03496487603378027,"ASD 1/sum(Aki), J-resolved",0.03496487603378027,2/2,yes,1.3449,1.3449,,,
+Cl X,Cl,9,2s2.2p4,3P,0.0,1,1.7515,,even,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p4,1D,2.0,5,8.0319,,even,,no,456.7,0.007725706515860876,"ASD 1/sum(Aki), J-resolved",0.007725706515860876,4/4,yes,8.0319,8.0319,,,
+Cl X,Cl,9,2s2.2p4,1S,0.0,1,16.7634,,even,,no,456.7,0.0007051141932435958,"ASD 1/sum(Aki), J-resolved",0.0007051141932435958,3/3,yes,15.418500000000002,16.7634,,,
+Cl X,Cl,9,2s.2p5,3P*,2.0,5,60.3672,,odd,,no,456.7,4.219409282700422e-11,"ASD 1/sum(Aki), J-resolved",4.219409282700422e-11,2/2,yes,60.3672,60.3672,,,
+Cl X,Cl,9,2s.2p5,3P*,1.0,3,61.5304,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s.2p5,3P*,0.0,1,62.1848,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2p6,1S,0.0,1,140.9036,,even,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p3.(4S*).3s,3S*,1.0,3,264.67,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p3.3s,3D*,1.0,3,272.86,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p3.3s,3D*,2.0,5,272.91,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p3.3s,3D*,3.0,7,273.12,,odd,,no,456.7,,,,,,,,,,
+Cl X,Cl,9,2s2.2p3.3s,1D*,2.0,5,274.8,,odd,,no,456.7,,,,,,,,,,

@@ -1,0 +1,10 @@
+# Journal PDFs are copyrighted and are not redistributable.
+papers/
+
+# 300 dpi rasters, regenerable from the data; the vector PDFs are kept.
+*.png
+
+.DS_Store
+__pycache__/
+*.pyc
+explorer_fragment.html

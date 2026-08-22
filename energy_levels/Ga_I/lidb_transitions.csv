@@ -1,0 +1,6 @@
+Initial State,Final State,Partial Lifetime /s,Delta Energy /eV
+Ga 2S;v=4s2.5s,Ga 2Po;v=3d10.4s2.4p,6.993e-09,-3.07331140516729
+Ga 2D;v=4s2.4d,Ga 2Po;v=3d10.4s2.4p,6.9881e-09,-4.3122817153562
+Ga 2S;v=4s2.6s,Ga 2Po;v=3d10.4s2.4p,2.809e-08,-4.6598138048261
+Ga 2D;v=4s2.5d,Ga 2Po;v=3d10.4s2.4p,2.9994e-08,-5.05879814970251
+Ga 2D;v=4s2.6d,Ga 2Po;v=3d10.4s2.4p,1.1696e-07,-5.40249921581804

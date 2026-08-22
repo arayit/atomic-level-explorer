@@ -1,0 +1,6 @@
+Initial State,Final State,Partial Lifetime /s,Delta Energy /eV
+He+ 2Po;v=2p,He+ 2S;v=1s,9.9711e-11,-40.812052969787
+He+ 2Po;v=3p,He+ 2S;v=1s,3.735e-10,-48.3702033169967
+He+ 2Po;v=3p,He+ 2S;v=2s,2.7825e-09,-7.558055834596701
+He+ 2S;v=3s,He+ 2Po;v=2p,9.8939e-09,-7.558150347209704
+He+ 2D;v=3d,He+ 2Po;v=2p,9.6612e-10,-7.5583983098864

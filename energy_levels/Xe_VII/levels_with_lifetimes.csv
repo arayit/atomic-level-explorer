@@ -1,0 +1,73 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Xe VII,Xe,6,5s2,1S,0.0,1,0.0,0.0,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5p,3P*,0.0,1,11.92,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5p,3P*,1.0,3,12.4543,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5p,3P*,2.0,5,14.094,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5p,1P*,1.0,3,17.7619,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p2,3P,0.0,1,27.7319,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p2,3P,1.0,3,29.0972,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p2,3P,2.0,5,31.2258,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p2,1D,2.0,5,29.2727,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5s,3F*,2.0,5,33.7957,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5s,3F*,3.0,7,33.8244,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5s,3F*,4.0,9,33.8781,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p2,1S,0.0,1,33.8735,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5s,1F*,3.0,7,34.6266,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5d,3D,1.0,3,35.6792,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5d,3D,2.0,5,35.7957,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5d,3D,3.0,7,35.9976,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5d,1D,2.0,5,38.1303,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6s,3S,1.0,3,43.9937,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6s,1S,0.0,1,44.8415,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3G,3.0,7,47.4061,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3G,4.0,9,47.8792,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3G,5.0,11,49.7914,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3F,3.0,7,47.7862,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3F,2.0,5,47.9585,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3F,4.0,9,49.5921,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3F*,2.0,5,48.824,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3F*,3.0,7,49.7689,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3F*,4.0,9,51.1518,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,1F,3.0,7,49.3491,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6p,3P*,0.0,1,49.6763,,odd,yes,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6p,3P*,1.0,3,49.7044,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6p,3P*,2.0,5,50.6286,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,1D*,2.0,5,50.1576,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3D,3.0,7,50.211,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3D,2.0,5,50.38,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,3D,1.0,3,50.6806,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6p,1P*,1.0,3,50.561,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3D*,1.0,3,50.9602,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3D*,2.0,5,51.7312,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3D*,3.0,7,52.4488,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,1G,4.0,9,51.0258,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4f.5p,1D,2.0,5,51.6217,,even,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3P*,0.0,1,52.5926,,odd,yes,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3P*,1.0,3,52.6396,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,3P*,2.0,5,52.7223,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,1F*,3.0,7,54.3581,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.5d,1P*,1.0,3,54.7236,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5f,3F*,2.0,5,57.3677,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5f,3F*,3.0,7,57.3788,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5f,3F*,4.0,9,57.4244,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.5f,1F*,3.0,7,57.9874,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.6s,3P*,0.0,1,58.1209,,odd,yes,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.6s,3P*,1.0,3,58.3724,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5p.6s,3P*,2.0,5,60.1863,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.6d,3D,1.0,3,59.015,,even,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5s.6d,3D,2.0,5,59.044,,even,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5s.6d,3D,3.0,7,59.12,,even,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5p.6s,1P*,1.0,3,60.7469,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,5s.7s,3S,1.0,3,62.765,,even,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5s.7p,3P*,0.0,1,65.348,,odd,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5s.7p,3P*,1.0,3,65.4,,odd,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,5s.7p,3P*,2.0,5,65.63,,odd,,no,91.6,,,,,,,,,,L7281
+Xe VII,Xe,6,4d9.5s2.5p,1P*,1.0,3,66.8602,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4d9.5s2.5p,3D*,1.0,3,68.17,,odd,,no,91.6,,,,,,,,,,L11882
+Xe VII,Xe,6,4d9.5s2.4f,3P*,1.0,3,80.6,,odd,,no,91.6,,,,,,,,,,L5691
+Xe VII,Xe,6,4d9.5s2.4f,3D*,1.0,3,84.7,,odd,,no,91.6,,,,,,,,,,L5691
+Xe VII,Xe,6,4d9.5s2.4f,1P*,1.0,3,100.6023,,odd,,yes,91.6,,autoionizing - not in any database,,,,,,,,L11882
+Xe VII,Xe,6,4d9.5s2.6p,3P*,1.0,3,103.54,,odd,,yes,91.6,,autoionizing - not in any database,,,,,,,,L5852
+Xe VII,Xe,6,4d9.5s2.6p,1P*,1.0,3,104.86,,odd,,yes,91.6,,autoionizing - not in any database,,,,,,,,L5852
+Xe VII,Xe,6,4d9.5s2.5f,3P*,1.0,3,109.321,,odd,,yes,91.6,,autoionizing - not in any database,,,,,,,,L5852
+Xe VII,Xe,6,4d9.5s2.5f,1P*,1.0,3,116.01,,odd,,yes,91.6,,autoionizing - not in any database,,,,,,,,L5852

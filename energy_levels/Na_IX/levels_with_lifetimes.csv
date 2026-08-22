@@ -1,0 +1,45 @@
+spectrum,element,charge,configuration,term,J,g,energy_eV,unc_eV,parity,doubtful,above_ionization,ionization_eV,tau_s,tau_source,tau_asd_s,asd_channels,asd_tau_complete,strongest_decay_eV,max_decay_eV,tau_lidb_s,lidb_metastable,ref
+Na IX,Na,8,1s2.2s,2S,0.5,2,0.0,0.0,even,,no,299.856,,,,,,,,,,L5793
+Na IX,Na,8,1s2.2p,2P*,0.5,2,17.86177,0.00014,odd,,no,299.856,1.6051364365971109e-09,"ASD 1/sum(Aki), J-resolved",1.6051364365971109e-09,1/1,yes,17.86177,17.86177,,,u57
+Na IX,Na,8,1s2.2p,2P*,1.5,4,18.18702,9e-05,odd,,no,299.856,1.5151515151515152e-09,"ASD 1/sum(Aki), J-resolved",1.5151515151515152e-09,1/1,yes,18.18702,18.18702,,,u57
+Na IX,Na,8,1s2.3s,2S,0.5,2,170.596,0.012,even,,no,299.856,1.443001443001443e-11,"ASD 1/sum(Aki), J-resolved",1.443001443001443e-11,2/2,yes,152.40898,152.73423,,,
+Na IX,Na,8,1s2.3p,2P*,0.5,2,175.484,0.012,odd,,no,299.856,7.138813514916194e-12,"ASD 1/sum(Aki), J-resolved",7.138813514916194e-12,2/2,yes,175.484,175.484,,,
+Na IX,Na,8,1s2.3p,2P*,1.5,4,175.578,0.012,odd,,no,299.856,7.138573998458068e-12,"ASD 1/sum(Aki), J-resolved",7.138573998458068e-12,2/2,yes,175.578,175.578,,,
+Na IX,Na,8,1s2.3d,2D,1.5,4,177.297,0.012,even,,no,299.856,2.2846534962911483e-12,"ASD 1/sum(Aki), J-resolved",2.2846534962911483e-12,4/4,yes,159.43523,159.43523,,,
+Na IX,Na,8,1s2.3d,2D,2.5,6,177.322,0.012,even,,no,299.856,2.2935629893244966e-12,"ASD 1/sum(Aki), J-resolved",2.2935629893244966e-12,2/2,yes,159.13498,159.13498,,,
+Na IX,Na,8,1s2.4s,2S,0.5,2,228.174,0.012,even,,no,299.856,2.1593608291945583e-11,"ASD 1/sum(Aki), J-resolved",2.1593608291945583e-11,4/4,yes,209.98698000000002,210.31223,,,
+Na IX,Na,8,1s2.4p,2P*,0.5,2,230.169,0.012,odd,,no,299.856,1.192490647892094e-11,"ASD 1/sum(Aki), J-resolved",1.192490647892094e-11,4/4,yes,230.169,230.169,,,
+Na IX,Na,8,1s2.4p,2P*,1.5,4,230.21,0.012,odd,,no,299.856,1.1880124788830782e-11,"ASD 1/sum(Aki), J-resolved",1.1880124788830782e-11,5/5,yes,230.21,230.21,,,
+Na IX,Na,8,1s2.4d,2D,1.5,4,230.89,0.012,even,,no,299.856,5.21401367535678e-12,"ASD 1/sum(Aki), J-resolved",5.21401367535678e-12,6/6,yes,213.02822999999998,213.02822999999998,,,
+Na IX,Na,8,1s2.4d,2D,2.5,6,230.929,0.012,even,,no,299.856,5.219183608306282e-12,"ASD 1/sum(Aki), J-resolved",5.219183608306282e-12,3/3,yes,212.74198,212.74198,,,
+Na IX,Na,8,1s2.4f,2F*,2.5,6,230.974,0.012,odd,,no,299.856,,,,,,,,,,
+Na IX,Na,8,1s2.4f,2F*,3.5,8,230.98,0.012,odd,,no,299.856,,,,,,,,,,
+Na IX,Na,8,1s2.5s,2S,0.5,2,254.356,0.012,even,,no,299.856,3.483106931382794e-11,"ASD 1/sum(Aki), J-resolved",3.483106931382794e-11,6/6,yes,236.16898,236.49423,,,
+Na IX,Na,8,1s2.5p,2P*,0.5,2,255.358,0.012,odd,,no,299.856,1.9921989473619203e-11,"ASD 1/sum(Aki), J-resolved",1.9921989473619203e-11,6/6,yes,255.358,255.358,,,
+Na IX,Na,8,1s2.5p,2P*,1.5,4,255.358,0.012,odd,,no,299.856,1.995658644185439e-11,"ASD 1/sum(Aki), J-resolved",1.995658644185439e-11,8/8,yes,255.358,255.358,,,
+Na IX,Na,8,1s2.5d,2D,1.5,4,255.762,0.012,even,,no,299.856,1.0037096063191565e-11,"ASD 1/sum(Aki), J-resolved",1.0037096063191565e-11,8/8,yes,237.90023,237.90023,,,
+Na IX,Na,8,1s2.5d,2D,2.5,6,255.768,0.012,even,,no,299.856,1.0047178536252681e-11,"ASD 1/sum(Aki), J-resolved",1.0047178536252681e-11,4/4,yes,237.58098,237.58098,,,
+Na IX,Na,8,1s2.6p,2P*,0.5,2,269.005,0.012,odd,,no,299.856,3.192134580393909e-11,"ASD 1/sum(Aki), J-resolved",3.192134580393909e-11,7/7,yes,269.005,269.005,,,
+Na IX,Na,8,1s2.6p,2P*,1.5,4,269.005,0.012,odd,,no,299.856,3.1944901434006623e-11,"ASD 1/sum(Aki), J-resolved",3.1944901434006623e-11,10/10,yes,269.005,269.005,,,
+Na IX,Na,8,1s2.6d,2D,1.5,4,269.218,0.012,even,,no,299.856,1.7355346153238117e-11,"ASD 1/sum(Aki), J-resolved",1.7355346153238117e-11,10/10,yes,251.35623,251.35623,,,
+Na IX,Na,8,1s2.6d,2D,2.5,6,269.238,0.012,even,,no,299.856,1.7358045427150515e-11,"ASD 1/sum(Aki), J-resolved",1.7358045427150515e-11,5/5,yes,251.05098,251.05098,,,
+Na IX,Na,8,1s2.7p,2P*,0.5,2,277.215,0.012,odd,,no,299.856,4.978344202718176e-11,"ASD 1/sum(Aki), J-resolved",4.978344202718176e-11,8/8,yes,277.215,277.215,,,
+Na IX,Na,8,1s2.7p,2P*,1.5,4,277.215,0.012,odd,,no,299.856,4.9521130666455374e-11,"ASD 1/sum(Aki), J-resolved",4.9521130666455374e-11,12/12,yes,277.215,277.215,,,
+Na IX,Na,8,1s2.7d,2D,1.5,4,277.372,0.012,even,,no,299.856,2.7241942391900294e-11,"ASD 1/sum(Aki), J-resolved",2.7241942391900294e-11,12/12,yes,259.51023000000004,259.51023000000004,,,
+Na IX,Na,8,1s2.7d,2D,2.5,6,277.374,0.012,even,,no,299.856,2.7359703271979744e-11,"ASD 1/sum(Aki), J-resolved",2.7359703271979744e-11,6/6,yes,259.18698,259.18698,,,
+Na IX,Na,8,1s.2s2,2S,0.5,2,1092.998,0.011,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(3P*),4P*,0.5,2,1097.709,0.005,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(3P*),4P*,1.5,4,1097.789,0.005,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(3P*),4P*,2.5,6,1098.017,0.005,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(3P*),2P*,0.5,2,1111.379,0.005,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(3P*),2P*,1.5,4,1111.57,0.005,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,4P,0.5,2,1116.766,0.005,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,4P,1.5,4,1116.921,0.005,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,4P,2.5,6,1117.085,0.005,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(1P*),2P*,0.5,2,1117.929,0.007,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.(2S).2s.2p.(1P*),2P*,1.5,4,1117.983,0.007,odd,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,2D,2.5,6,1125.192,0.009,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,2D,1.5,4,1125.287,0.009,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,2P,0.5,2,1127.867,0.006,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,2P,1.5,4,1128.183,0.005,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
+Na IX,Na,8,1s.2p2,2S,0.5,2,1137.972,0.012,even,,yes,299.856,,autoionizing - not in any database,,,,,,,,"L20125,L22456"
