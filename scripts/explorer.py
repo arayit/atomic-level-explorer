@@ -37,6 +37,29 @@ LAMBDA_NM = 1030                       # Yb fibre driver, default
 
 
 
+ELEMENT_Z = {
+    "H": 1, "He": 2, "Li": 3, "Be": 4, "B": 5, "C": 6, "N": 7, "O": 8, "F": 9, "Ne": 10,
+    "Na": 11, "Mg": 12, "Al": 13, "Si": 14, "P": 15, "S": 16, "Cl": 17, "Ar": 18, "K": 19,
+    "Ca": 20, "Sc": 21, "Ti": 22, "V": 23, "Cr": 24, "Mn": 25, "Fe": 26, "Co": 27, "Ni": 28,
+    "Cu": 29, "Zn": 30, "Ga": 31, "Ge": 32, "As": 33, "Se": 34, "Br": 35, "Kr": 36, "Rb": 37,
+    "Sr": 38, "Y": 39, "Zr": 40, "Nb": 41, "Mo": 42, "Ag": 47, "Cd": 48, "In": 49, "Sn": 50,
+    "Sb": 51, "Te": 52, "I": 53, "Xe": 54, "Cs": 55, "Ba": 56, "La": 57, "W": 74, "Au": 79,
+    "Hg": 80, "Tl": 81, "Pb": 82, "Bi": 83,
+}
+# Periodic-table category. "metalloid" is the semiconductor group (B, Si, Ge, As, Sb, Te).
+ELEMENT_CAT = {
+    **{e: "noble gas" for e in ("He", "Ne", "Ar", "Kr", "Xe")},
+    **{e: "alkali metal" for e in ("Li", "Na", "K", "Rb", "Cs")},
+    **{e: "alkaline earth" for e in ("Be", "Mg", "Ca", "Sr", "Ba")},
+    **{e: "nonmetal" for e in ("H", "C", "N", "O", "F", "P", "S", "Cl", "Se", "Br", "I")},
+    **{e: "metalloid" for e in ("B", "Si", "Ge", "As", "Sb", "Te")},
+    **{e: "transition metal" for e in ("Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu",
+                                       "Zn", "Y", "Zr", "Nb", "Mo", "Ag", "Cd", "La", "W",
+                                       "Au", "Hg")},
+    **{e: "post-transition metal" for e in ("Al", "Ga", "In", "Sn", "Tl", "Pb", "Bi")},
+}
+
+
 # Temperature at which the element reaches 1 Pa of vapour (about 1e14 cm^-3, a working
 # vapour-cell density), in kelvin; None where the source tabulates no 1 Pa point.
 # CRC Handbook of Chemistry and Physics, 84th ed.; metals after Alcock, Itkin & Horrigan (1984).
@@ -156,6 +179,11 @@ def collect():
     return species
 
 
+def element_table(species) -> dict:
+    els = {r["el"] for r in species.values()}
+    return {e: [ELEMENT_Z.get(e, 999), ELEMENT_CAT.get(e, "")] for e in els}
+
+
 CSS = r"""
 :root{
   color-scheme:light;
@@ -216,12 +244,15 @@ a{color:var(--link)}
 .controls button{padding:1px 8px}
 
 /* ---------- grid ---------- */
-.grid{display:grid; grid-template-columns:186px minmax(0,1fr) 268px; flex:1; min-height:0}
+.grid{display:grid; grid-template-columns:196px minmax(0,1fr) 268px; flex:1; min-height:0}
 .rail{border-right:1px solid var(--rule); overflow:auto; max-height:calc(100vh - 118px)}
 .rail.right{border-right:0; border-left:1px solid var(--rule)}
 .railhead{position:sticky; top:0; background:var(--paper); padding:8px 12px 5px;
   border-bottom:1px solid var(--rule-2); font-size:12px; color:var(--ink-3); z-index:2}
-.elname{padding:7px 12px 2px; font-size:12px; color:var(--ink-3); font-style:italic}
+.elname{padding:8px 12px 3px; font-size:12px; color:var(--ink-3)}
+.elname b{color:var(--ink); font-weight:bold; font-style:normal; font-size:13px}
+.elname .z{margin-left:6px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:11px}
+.elname .cat{display:block; font-style:italic; font-size:11px; margin-top:-1px}
 .spbtn{display:flex; align-items:baseline; gap:8px; width:100%; text-align:left;
   border:0; background:transparent; color:var(--ink-2); font:inherit; font-size:13px;
   padding:2px 12px; cursor:pointer}
@@ -402,6 +433,7 @@ BODY = r"""
 
 JS = r"""
 const DATA = __DATA__;
+const ELEM = __ELEM__;
 const WIN_LO = __WIN_LO__, WIN_HI = __WIN_HI__;
 const HC = 1239.841984;              // eV nm
 const LAM_MIN = 1, LAM_MAX = 2000;
@@ -604,10 +636,15 @@ function buildRail(){
     if (!byEl.has(r.el)) byEl.set(r.el, []);
     byEl.get(r.el).push(r);
   }
+  const order = [...byEl.keys()].sort((a,b) => (ELEM[a]?.[0] ?? 999) - (ELEM[b]?.[0] ?? 999));
   let html = '';
-  for (const [el, list] of byEl){
+  for (const el of order){
+    const list = byEl.get(el);
     list.sort((a,b) => a.q - b.q);
-    html += '<div class="elgroup"><div class="elname">' + esc(el) + '</div>';
+    const z = ELEM[el]?.[0], cat = ELEM[el]?.[1];
+    html += '<div class="elgroup"><div class="elname"><b>' + esc(el) + '</b>'
+          + (z && z < 999 ? '<span class="z">' + z + '</span>' : '')
+          + (cat ? '<span class="cat">' + esc(cat) + '</span>' : '') + '</div>';
     for (const r of list){
       const n = r.lv.filter(x => inWin(x[4])).length;
       html += '<button class="spbtn" type="button" data-sp="' + esc(r.sp) + '">'
@@ -1040,7 +1077,8 @@ def build() -> tuple[str, str]:
     data = collect()
     newest = max(os.path.getmtime(f) for f in glob.glob(str(OUT_ROOT / "*" / "asd_levels.csv")))
     stamp = datetime.date.fromtimestamp(newest).strftime("%d %B %Y")
-    js = (JS.replace("__DATA__", json.dumps(data, separators=(",", ":")))
+    js = (JS.replace("__ELEM__", json.dumps(element_table(data), separators=(",", ":")))
+            .replace("__DATA__", json.dumps(data, separators=(",", ":")))
             .replace("__WIN_LO__", repr(WIN_LO)).replace("__WIN_HI__", repr(WIN_HI))
             .replace("__LAMBDA__", repr(LAMBDA_NM)))
     body = BODY.replace("__DATE__", stamp)
