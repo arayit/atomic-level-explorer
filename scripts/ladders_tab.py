@@ -303,8 +303,8 @@ function initLadders(){
   sel.innerHTML = '<option value="any">all</option>'
     + MAT.filter(m => LAD[m.spectrum]).map(m =>
         '<option value="' + esc(m.spectrum) + '">' + esc(m.spectrum) + "</option>").join("");
-  ["lTop", "lDet", "lCol", "lVer", "lStart", "lSp"].forEach(id =>
-    $(id).addEventListener("change", drawLadders));
+  ["#lTop", "#lDet", "#lCol", "#lVer", "#lStart", "#lSp"].forEach(sel =>
+    $(sel).addEventListener("change", drawLadders));
   drawLadders();
 }
 
