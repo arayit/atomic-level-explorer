@@ -49,64 +49,64 @@ The chance-match column is the check on all of this: it estimates how many level
 
 ### Tier 1 - 2 species
 
-| species | Z | preparation | fast rung | closure | best detuning | rung lifetimes | hop amplitude | order | hops | best order anywhere | start | 1 colour | reach | chance matches per hop |
+| species | Z | preparation | fast rung | closure | best detuning | state lifetimes | hop strength | order | pattern | best order anywhere | start | 1 colour | reach | chance matches per hop |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Xe I | 54 | monatomic gas at 20 C | autoionizing | A | 17.5 meV | all measured | strong 0.02 | 6 | 3 | 8 | metastable | yes | 13.39 eV | 4.2 |
-| Kr I | 36 | monatomic gas at 20 C | autoionizing | A | 3.4 meV | all measured | strong 0.017 | 4 | 2 | 8 | metastable | yes | 14.63 eV | 4.4 |
+| Xe I | 54 | monatomic gas at 20 C | autoionizing | A | 17.5 meV | all measured | strong 0.02 | 6 | 2+2+2 | 8 | metastable | yes | 13.39 eV | 4.2 |
+| Kr I | 36 | monatomic gas at 20 C | autoionizing | A | 3.4 meV | all measured | strong 0.017 | 4 | 2+2 | 8 | metastable | yes | 14.63 eV | 4.4 |
 
 ### Tier 2 - 7 species
 
-| species | Z | preparation | fast rung | closure | best detuning | rung lifetimes | hop amplitude | order | hops | best order anywhere | start | 1 colour | reach | chance matches per hop |
+| species | Z | preparation | fast rung | closure | best detuning | state lifetimes | hop strength | order | pattern | best order anywhere | start | 1 colour | reach | chance matches per hop |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| F I | 9 | F2 at 20 C, needs dissociation | autoionizing | A | 8.0 meV | all measured | strong 0.022 | 6 | 2 | 10 | metastable | yes | 19.9 eV | 1.9 |
-| Mg I | 12 | vapour, 1 Pa at 428 C | autoionizing | A | 12.7 meV | all measured | moderate 0.0042 | 8 | 3 | 10 | metastable | yes | 11.36 eV | 4.5 |
-| O I | 8 | O2 at 20 C, needs dissociation | autoionizing | A | 12.0 meV | all measured | strong 0.25 | 6 | 2 | 9 | metastable | yes | 16.89 eV | 2.6 |
-| Ar I | 18 | monatomic gas at 20 C | autoionizing | B | 26.1 meV | all measured | moderate 0.0059 | 6 | 2 | 6 | metastable | no | 15.92 eV | 4.1 |
-| Hg I | 80 | vapour, 1 Pa at 42 C | autoionizing | B | 55.3 meV | all measured | moderate 0.0019 | 8 | 3 | 10 | metastable | yes | 13.98 eV | 3.2 |
-| S I | 16 | S8 at 20 C, needs dissociation | autoionizing | A | 3.5 meV | all measured | strong 0.89 | 4 | 2 | 6 | metastable | yes | 13.35 eV | 2.6 |
-| Sr I | 38 | vapour, 1 Pa at 523 C | autoionizing | A | 7.6 meV | all measured | weak 0.00045 | 7 | 3 | 12 | ground | yes | 7.4 eV | 6.3 |
+| F I | 9 | F2 at 20 C, needs dissociation | autoionizing | A | 8.0 meV | all measured | strong 0.022 | 6 | 3+3 | 10 | metastable | yes | 19.9 eV | 1.9 |
+| Mg I | 12 | vapour, 1 Pa at 428 C | autoionizing | A | 12.7 meV | all measured | moderate 0.0042 | 8 | 3+3+2 | 10 | metastable | yes | 11.36 eV | 4.5 |
+| O I | 8 | O2 at 20 C, needs dissociation | autoionizing | A | 12.0 meV | all measured | strong 0.25 | 6 | 3+3 | 9 | metastable | yes | 16.89 eV | 2.6 |
+| Ar I | 18 | monatomic gas at 20 C | autoionizing | B | 26.1 meV | all measured | moderate 0.0059 | 6 | 3+3 | 6 | metastable | no | 15.92 eV | 4.1 |
+| Hg I | 80 | vapour, 1 Pa at 42 C | autoionizing | B | 55.3 meV | all measured | moderate 0.0019 | 8 | 3+2+3 | 10 | metastable | yes | 13.98 eV | 3.2 |
+| S I | 16 | S8 at 20 C, needs dissociation | autoionizing | A | 3.5 meV | all measured | strong 0.89 | 4 | 2+2 | 6 | metastable | yes | 13.35 eV | 2.6 |
+| Sr I | 38 | vapour, 1 Pa at 523 C | autoionizing | A | 7.6 meV | all measured | weak 0.00045 | 7 | 3+2+2 | 12 | ground | yes | 7.4 eV | 6.3 |
 
 ### Tier 3 - 21 species
 
-| species | Z | preparation | fast rung | closure | best detuning | rung lifetimes | hop amplitude | order | hops | best order anywhere | start | 1 colour | reach | chance matches per hop |
+| species | Z | preparation | fast rung | closure | best detuning | state lifetimes | hop strength | order | pattern | best order anywhere | start | 1 colour | reach | chance matches per hop |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Al I | 13 | vapour, 1 Pa at 1209 C | autoionizing | A | 21.1 meV | all measured | not scored | 9 | 3 | 10 | ground | yes | 9.49 eV | 2.9 |
-| B I | 5 | vapour, 1 Pa at 2075 C | autoionizing | A | 5.9 meV | all measured | weak 2.7e-08 | 6 | 2 | 12 | ground | yes | 12.01 eV | 1.5 |
-| Ca I | 20 | vapour, 1 Pa at 591 C | autoionizing | A | 13.5 meV | all measured | weak 1.6e-05 | 5 | 2 | 11 | ground | yes | 9.17 eV | 11.2 |
-| Cl I | 17 | Cl2 at 20 C, needs dissociation | autoionizing | B | 41.7 meV | all measured | not scored | 6 | 3 | 8 | metastable | yes | 16.37 eV | 3.0 |
-| Cr I | 24 | vapour, 1 Pa at 1383 C | autoionizing | A | 2.5 meV | all measured | weak 0.00013 | 6 | 2 | 11 | ground | yes | 8.21 eV | 10.7 |
-| Cu I | 29 | vapour, 1 Pa at 1236 C | autoionizing | A | 12.8 meV | all measured | weak 0.00014 | 8 | 3 | 11 | ground | yes | 10.81 eV | 3.0 |
-| Mn I | 25 | vapour, 1 Pa at 955 C | autoionizing | A | 9.9 meV | all measured | weak 1.7e-05 | 8 | 4 | 12 | ground | yes | 8.66 eV | 7.2 |
-| Ni I | 28 | vapour, 1 Pa at 1510 C | autoionizing | A | 18.4 meV | all measured | weak 0.00049 | 8 | 3 | 10 | ground | yes | 7.79 eV | 5.6 |
-| V I | 23 | vapour, 1 Pa at 1828 C | autoionizing | A | 14.2 meV | all measured | weak 0.00086 | 7 | 3 | 11 | ground | yes | 7.14 eV | 12.2 |
-| Y I | 39 | no vapour datum | autoionizing | A | 4.5 meV | all measured | moderate 0.0091 | 5 | 2 | 10 | ground | yes | 6.23 eV | 4.6 |
-| Fe II | 26 | vapour, 1 Pa at 1455 C + discharge | measured | A | 3.9 meV | all measured | weak 2.2e-05 | 9 | 4 | 12 | ground | yes | 21.37 eV | 9.5 |
-| Hg II | 80 | vapour, 1 Pa at 42 C + discharge | measured | B | 28.0 meV | all measured | weak 4.6e-06 | 12 | 4 | 12 | metastable | yes | 29.29 eV | 0.7 |
-| Pb I | 82 | vapour, 1 Pa at 705 C | autoionizing | A | 15.4 meV | all measured | weak 0.00049 | 5 | 2 | 11 | ground | yes | 8.65 eV | 2.6 |
-| Rb II | 37 | vapour, 1 Pa at 161 C + discharge | measured | B | 55.0 meV | all measured | weak 0.00089 | 9 | 3 | 12 | metastable | yes | 30.86 eV | 0.9 |
-| Si I | 14 | vapour, 1 Pa at 1635 C | autoionizing | A | 3.9 meV | all measured | weak 2.4e-05 | 5 | 2 | 12 | metastable | yes | 11.71 eV | 8.3 |
-| V II | 23 | vapour, 1 Pa at 1828 C + discharge | measured | A | 10.1 meV | all measured | weak 1.8e-05 | 9 | 4 | 11 | ground | yes | 17.45 eV | 4.2 |
-| Cs II | 55 | vapour, 1 Pa at 145 C + discharge | autoionizing | A | 15.0 meV | 3 rung(s) unpublished | not scored | 10 | 4 | 12 | metastable | no | 28.37 eV | 2.0 |
-| Si II | 14 | vapour, 1 Pa at 1635 C + discharge | measured | A | 21.7 meV | all measured | weak 1.6e-07 | 7 | 3 | 10 | metastable | no | 22.32 eV | 0.9 |
-| Sn II | 50 | vapour, 1 Pa at 1224 C + discharge | measured | A | 9.6 meV | all measured | weak 1.3e-05 | 9 | 4 | 11 | metastable | no | 23.8 eV | 0.7 |
-| Ge II | 32 | vapour, 1 Pa at 1371 C + discharge | measured | B | 32.0 meV | all measured | not scored | 10 | 4 | 12 | metastable | yes | 26.42 eV | 0.8 |
-| Zn I | 30 | vapour, 1 Pa at 337 C | autoionizing | B | 54.8 meV | 1 rung(s) unpublished | not scored | 8 | 3 | 10 | metastable | no | 12.77 eV | 3.3 |
+| Al I | 13 | vapour, 1 Pa at 1209 C | autoionizing | A | 21.1 meV | all measured | not scored | 9 | 3+3+3 | 10 | ground | yes | 9.49 eV | 2.9 |
+| B I | 5 | vapour, 1 Pa at 2075 C | autoionizing | A | 5.9 meV | all measured | weak 2.7e-08 | 6 | 3+3 | 12 | ground | yes | 12.01 eV | 1.5 |
+| Ca I | 20 | vapour, 1 Pa at 591 C | autoionizing | A | 13.5 meV | all measured | weak 1.6e-05 | 5 | 2+3 | 11 | ground | yes | 9.17 eV | 11.2 |
+| Cl I | 17 | Cl2 at 20 C, needs dissociation | autoionizing | B | 41.7 meV | all measured | not scored | 6 | 2+2+2 | 8 | metastable | yes | 16.37 eV | 3.0 |
+| Cr I | 24 | vapour, 1 Pa at 1383 C | autoionizing | A | 2.5 meV | all measured | weak 0.00013 | 6 | 3+3 | 11 | ground | yes | 8.21 eV | 10.7 |
+| Cu I | 29 | vapour, 1 Pa at 1236 C | autoionizing | A | 12.8 meV | all measured | weak 0.00014 | 8 | 3+3+2 | 11 | ground | yes | 10.81 eV | 3.0 |
+| Mn I | 25 | vapour, 1 Pa at 955 C | autoionizing | A | 9.9 meV | all measured | weak 1.7e-05 | 8 | 2+2+2+2 | 12 | ground | yes | 8.66 eV | 7.2 |
+| Ni I | 28 | vapour, 1 Pa at 1510 C | autoionizing | A | 18.4 meV | all measured | weak 0.00049 | 8 | 3+2+3 | 10 | ground | yes | 7.79 eV | 5.6 |
+| V I | 23 | vapour, 1 Pa at 1828 C | autoionizing | A | 14.2 meV | all measured | weak 0.00086 | 7 | 3+2+2 | 11 | ground | yes | 7.14 eV | 12.2 |
+| Y I | 39 | no vapour datum | autoionizing | A | 4.5 meV | all measured | moderate 0.0091 | 5 | 2+3 | 10 | ground | yes | 6.23 eV | 4.6 |
+| Fe II | 26 | vapour, 1 Pa at 1455 C + discharge | measured | A | 3.9 meV | all measured | weak 2.2e-05 | 9 | 2+2+3+2 | 12 | ground | yes | 21.37 eV | 9.5 |
+| Hg II | 80 | vapour, 1 Pa at 42 C + discharge | measured | B | 28.0 meV | all measured | weak 4.6e-06 | 12 | 3+3+3+3 | 12 | metastable | yes | 29.29 eV | 0.7 |
+| Pb I | 82 | vapour, 1 Pa at 705 C | autoionizing | A | 15.4 meV | all measured | weak 0.00049 | 5 | 3+2 | 11 | ground | yes | 8.65 eV | 2.6 |
+| Rb II | 37 | vapour, 1 Pa at 161 C + discharge | measured | B | 55.0 meV | all measured | weak 0.00089 | 9 | 3+3+3 | 12 | metastable | yes | 30.86 eV | 0.9 |
+| Si I | 14 | vapour, 1 Pa at 1635 C | autoionizing | A | 3.9 meV | all measured | weak 2.4e-05 | 5 | 3+2 | 12 | metastable | yes | 11.71 eV | 8.3 |
+| V II | 23 | vapour, 1 Pa at 1828 C + discharge | measured | A | 10.1 meV | all measured | weak 1.8e-05 | 9 | 2+2+3+2 | 11 | ground | yes | 17.45 eV | 4.2 |
+| Cs II | 55 | vapour, 1 Pa at 145 C + discharge | autoionizing | A | 15.0 meV | 3 rung(s) unpublished | not scored | 10 | 2+3+2+3 | 12 | metastable | no | 28.37 eV | 2.0 |
+| Si II | 14 | vapour, 1 Pa at 1635 C + discharge | measured | A | 21.7 meV | all measured | weak 1.6e-07 | 7 | 2+2+3 | 10 | metastable | no | 22.32 eV | 0.9 |
+| Sn II | 50 | vapour, 1 Pa at 1224 C + discharge | measured | A | 9.6 meV | all measured | weak 1.3e-05 | 9 | 2+2+2+3 | 11 | metastable | no | 23.8 eV | 0.7 |
+| Ge II | 32 | vapour, 1 Pa at 1371 C + discharge | measured | B | 32.0 meV | all measured | not scored | 10 | 2+2+3+3 | 12 | metastable | yes | 26.42 eV | 0.8 |
+| Zn I | 30 | vapour, 1 Pa at 337 C | autoionizing | B | 54.8 meV | 1 rung(s) unpublished | not scored | 8 | 3+2+3 | 10 | metastable | no | 12.77 eV | 3.3 |
 
 ### Tier 4 - 11 species
 
-| species | Z | preparation | fast rung | closure | best detuning | rung lifetimes | hop amplitude | order | hops | best order anywhere | start | 1 colour | reach | chance matches per hop |
+| species | Z | preparation | fast rung | closure | best detuning | state lifetimes | hop strength | order | pattern | best order anywhere | start | 1 colour | reach | chance matches per hop |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Cd I | 48 | vapour, 1 Pa at 257 C | autoionizing | C | 92.7 meV | all measured | not scored | 7 | 3 | 10 | metastable | yes | 12.13 eV | 1.6 |
-| K II | 19 | vapour, 1 Pa at 200 C + discharge | measured | C | 128.5 meV | all measured | not scored | 9 | 3 | 11 | metastable | yes | 35.44 eV | 0.5 |
-| Tl I | 81 | vapour, 1 Pa at 609 C | autoionizing | C | 65.0 meV | all measured | not scored | 7 | 3 | 10 | metastable | yes | 9.42 eV | 1.5 |
-| Be I | 4 | vapour, 1 Pa at 1189 C | autoionizing | C | 120.7 meV | all measured | not scored | 8 | 3 | 10 | metastable | yes | 12.95 eV | 1.8 |
-| Co III | 27 | vapour, 1 Pa at 1517 C + 2x ionization | measured | A | 23.6 meV | all measured | weak 1.5e-12 | 9 | 4 | 9 | metastable | yes | 43.34 eV | 1.3 |
-| Fe III | 26 | vapour, 1 Pa at 1455 C + 2x ionization | measured | A | 12.4 meV | all measured | not scored | 9 | 4 | 9 | metastable | yes | 38.84 eV | 2.9 |
-| Sn I | 50 | vapour, 1 Pa at 1224 C | autoionizing | C | 110.3 meV | all measured | not scored | 7 | 3 | 11 | metastable | yes | 10.27 eV | 3.1 |
-| Ge I | 32 | vapour, 1 Pa at 1371 C | autoionizing | C | 148.8 meV | all measured | not scored | 7 | 3 | 7 | metastable | no | 8.12 eV | 7.4 |
-| Pb II | 82 | vapour, 1 Pa at 705 C + discharge | measured | C | 104.6 meV | all measured | not scored | 4 | 2 | 10 | metastable | yes | 22.24 eV | 0.9 |
-| Tl II | 81 | vapour, 1 Pa at 609 C + discharge | measured | C | 128.1 meV | 1 rung(s) unpublished | not scored | 4 | 2 | 10 | metastable | yes | 22.77 eV | 0.6 |
-| Ca III | 20 | vapour, 1 Pa at 591 C + 2x ionization | measured | C | 94.7 meV | all measured | not scored | 7 | 3 | 9 | metastable | yes | 54.06 eV | 0.5 |
+| Cd I | 48 | vapour, 1 Pa at 257 C | autoionizing | C | 92.7 meV | all measured | not scored | 7 | 3+2+2 | 10 | metastable | yes | 12.13 eV | 1.6 |
+| K II | 19 | vapour, 1 Pa at 200 C + discharge | measured | C | 128.5 meV | all measured | not scored | 9 | 3+3+3 | 11 | metastable | yes | 35.44 eV | 0.5 |
+| Tl I | 81 | vapour, 1 Pa at 609 C | autoionizing | C | 65.0 meV | all measured | not scored | 7 | 3+2+2 | 10 | metastable | yes | 9.42 eV | 1.5 |
+| Be I | 4 | vapour, 1 Pa at 1189 C | autoionizing | C | 120.7 meV | all measured | not scored | 8 | 3+2+3 | 10 | metastable | yes | 12.95 eV | 1.8 |
+| Co III | 27 | vapour, 1 Pa at 1517 C + 2x ionization | measured | A | 23.6 meV | all measured | weak 1.5e-12 | 9 | 2+2+3+2 | 9 | metastable | yes | 43.34 eV | 1.3 |
+| Fe III | 26 | vapour, 1 Pa at 1455 C + 2x ionization | measured | A | 12.4 meV | all measured | not scored | 9 | 2+2+2+3 | 9 | metastable | yes | 38.84 eV | 2.9 |
+| Sn I | 50 | vapour, 1 Pa at 1224 C | autoionizing | C | 110.3 meV | all measured | not scored | 7 | 3+2+2 | 11 | metastable | yes | 10.27 eV | 3.1 |
+| Ge I | 32 | vapour, 1 Pa at 1371 C | autoionizing | C | 148.8 meV | all measured | not scored | 7 | 3+2+2 | 7 | metastable | no | 8.12 eV | 7.4 |
+| Pb II | 82 | vapour, 1 Pa at 705 C + discharge | measured | C | 104.6 meV | all measured | not scored | 4 | 2+2 | 10 | metastable | yes | 22.24 eV | 0.9 |
+| Tl II | 81 | vapour, 1 Pa at 609 C + discharge | measured | C | 128.1 meV | 1 rung(s) unpublished | not scored | 4 | 2+2 | 10 | metastable | yes | 22.77 eV | 0.6 |
+| Ca III | 20 | vapour, 1 Pa at 591 C + 2x ionization | measured | C | 94.7 meV | all measured | not scored | 7 | 2+3+2 | 9 | metastable | yes | 54.06 eV | 0.5 |
 
 ## Best ladder per species, tiers 1-3
 

@@ -83,7 +83,8 @@ def collect():
 
     keep = ("tier", "spectrum", "element", "Z", "charge", "prep_note", "prep_cost", "evidence",
             "fast_rung_at", "rung_lifetimes", "closure", "best_detuning_meV", "hop_amplitude",
-            "relative_amplitude", "order", "hops", "max_order", "ground_start",
+            "relative_amplitude", "order", "pattern", "colours", "hops",
+            "max_order", "ground_start",
             "single_colour", "reach_eV_neutral_frame", "n_ladders",
             "accidental_matches_per_hop", "truncated")
     return [{k: r.get(k, "") for k in keep} for r in mat], lad
@@ -118,9 +119,20 @@ CSS = r"""
 .lad tr.t1 td:first-child{border-left:3px solid var(--accent); padding-left:6px}
 .lad .pill{font-size:11px; color:var(--ink-3); border:1px solid var(--rule-2); padding:0 4px}
 .lad .emit{color:var(--accent-ink)}
-.lad .chain{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px}
+.lad .chain{display:flex; align-items:flex-start; font-family:ui-monospace,Menlo,Consolas,monospace}
+.lad .lv,.lad .ar{display:inline-flex; flex-direction:column; line-height:1.25}
+.lad .lv{padding:0 1px}
+.lad .lv b{font-weight:normal; font-size:12.5px}
+.lad .ar{align-items:center; padding:0 7px; color:var(--ink-3)}
+.lad .ar b{font-weight:normal; font-size:11px}
+.lad .ar b::after{content:" →"}
+.lad .lv i,.lad .ar i{font-style:normal; font-size:10.5px; color:var(--ink-3)}
 .lad .terms{color:var(--ink-3); font-size:11.5px; white-space:nowrap}
 .lad .none{padding:14px 18px; color:var(--ink-3)}
+.lad .gloss{margin:8px 0 0; display:grid; grid-template-columns:max-content minmax(0,1fr);
+  gap:2px 14px; max-width:100ch; font-size:12.5px}
+.lad .gloss dt{color:var(--ink); white-space:nowrap}
+.lad .gloss dd{margin:0; color:var(--ink-3)}
 .lad tbody tr:hover{background:var(--panel-2)}
 """
 
@@ -139,6 +151,30 @@ BODY = r"""
       given. Those exist only in ions &mdash; ionizing once roughly doubles the ionization
       limit while the level structure keeps its shape, so states that autoionize in the neutral
       sit safely below the limit one step up the isoelectronic sequence.</p>
+    <dl class="gloss">
+      <dt>Rung</dt><dd>a real level the ladder stops on &mdash; one per arrow, plus the
+        state it starts from.</dd>
+      <dt>Pattern / order</dt><dd>photons absorbed at each hop, and their sum.
+        <span class="mono">3+3</span> is order 6.</dd>
+      <dt>Energy match</dt><dd>how far a level gap sits from the photon energy that has to
+        bridge it. Under 25&nbsp;meV closes on driver tuning alone; the search allows
+        150&nbsp;meV, which is roughly the chirp and AC&nbsp;Stark budget.</dd>
+      <dt>Hop strength</dt><dd>whether a hop is strong, which is a different question from
+        whether it is allowed. A two-photon hop climbs through a virtual point, and its rate
+        depends on how close real levels lie to that point; the estimate here is built from
+        the one-photon oscillator strengths of the same atom and spans eight orders of
+        magnitude, so it ranks hops rather than measuring them.</dd>
+      <dt>Lifetimes</dt><dd>computed as
+        <span class="mono">1/&Sigma;A<sub>ki</sub></span> over the decay channels NIST lists,
+        so a level whose channels are only partly covered reads as an upper bound. Deciding
+        whether a rung holds population uses a conservative floor instead,
+        <span class="mono">&tau;&thinsp;k/n</span> for k of n channels known. A rung marked
+        <i>unpublished</i> has no A-value at all: below the ionization limit that almost always
+        means far longer than 20&nbsp;ps, but it is assumed rather than read.</dd>
+      <dt>Chance fits</dt><dd>how many levels fall inside one 150&nbsp;meV window by accident.
+        Fe&nbsp;I sits at 16 &mdash; aim anywhere and something is there, so an energy match
+        proves nothing. Hg&nbsp;II sits at 0.7, where a match means something.</dd>
+    </dl>
   </div>
 
   <form class="controls" onsubmit="return false">
@@ -176,9 +212,9 @@ BODY = r"""
   <h2>Materials <span class="muted" id="lMatNote"></span></h2>
   <div class="scroll"><table>
     <thead><tr>
-      <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Fast rung</th>
-      <th>Rung lifetimes</th><th>Closure</th><th>Hop amplitude</th><th>Order</th><th>Hops</th>
-      <th>One colour</th><th>Reach</th><th>Chance matches</th>
+      <th>Tier</th><th>Species</th><th>Z</th><th>Preparation</th><th>Fast state</th>
+      <th>State lifetimes</th><th>Energy match</th><th>Hop strength</th><th>Order</th>
+      <th>Pattern</th><th>One colour</th><th>Reach</th><th>Chance fits</th>
     </tr></thead>
     <tbody id="lMat"></tbody>
   </table></div>
@@ -186,7 +222,7 @@ BODY = r"""
   <h2>Chains <span class="muted" id="lLadNote"></span></h2>
   <div class="scroll"><table>
     <thead><tr>
-      <th>Species</th><th>Order</th><th>Hops</th><th>&Delta; worst</th><th>Chain</th>
+      <th>Species</th><th>Order</th><th>Pattern</th><th>Worst match</th><th>Chain</th>
       <th>Top state</th>
     </tr></thead>
     <tbody id="lLad"></tbody>
@@ -215,17 +251,56 @@ function tauText(t){
   return sig3(t) + " s";
 }
 
-function ladderRow(sp, L){
-  const chain = [L.startE.toFixed(3)];
-  const arrows = [];
-  for (let i = 0; i < L.ms.length; i++){
-    arrows.push(L.ms[i] + "γ " + nmLabel(L.nms[i]) + " nm");
-    chain.push(L.Es[i].toFixed(3));
+/* The ladder CSV rounds level energies to 3 decimals, which is coarse enough to shift a
+   per-hop detuning by a millielectronvolt, and it carries no lifetime for the state the
+   ladder starts from. Both are already on the page in full precision, in the level data the
+   other tab draws, so look them up there and fall back only if the name does not resolve. */
+const _lvIdx = {};
+function levelLookup(sp, name, approxE){
+  const D = DATA[sp];
+  if (!D) return null;
+  let idx = _lvIdx[sp];
+  if (!idx){
+    idx = _lvIdx[sp] = {};
+    for (const r of D.lv){
+      const n = D.confs[r[0]] + " " + D.terms[r[1]] + (r[2] == null ? "" : " J=" + r[2]);
+      (idx[n] || (idx[n] = [])).push([r[3], r[4]]);
+    }
   }
-  let line = esc(chain[0]);
-  for (let i = 0; i < arrows.length; i++)
-    line += ' <span class="muted">─' + esc(arrows[i]) + '→</span> ' + esc(chain[i + 1]);
-  const terms = esc([L.start].concat(L.names).join("  →  "));
+  const c = idx[name];
+  if (!c) return null;
+  let best = c[0];
+  for (const x of c) if (Math.abs(x[0] - approxE) < Math.abs(best[0] - approxE)) best = x;
+  return best;                                   // [energy, lifetime or null]
+}
+
+function stateNote(L, i, tau){
+  if (i === L.Es.length && L.ai) return "autoionizes";
+  if (tau != null) return tauText(tau);
+  if (i === 0) return L.kind === "ground" ? "ground state" : "metastable";
+  return "unpublished";
+}
+
+function ladderRow(sp, L){
+  const names = [L.start].concat(L.names);
+  const Es = [L.startE].concat(L.Es);
+  const taus = [null].concat(L.taus);
+  for (let i = 0; i < names.length; i++){
+    const hit = levelLookup(sp, names[i], Es[i]);
+    if (hit){ Es[i] = hit[0]; if (taus[i] == null) taus[i] = hit[1]; }
+  }
+
+  let line = "";
+  for (let i = 0; i < Es.length; i++){
+    if (i){
+      const d = (Es[i] - Es[i - 1] - L.ms[i - 1] * HC / L.nms[i - 1]) * 1000;
+      line += '<span class="ar"><b>' + L.ms[i - 1] + "γ " + esc(nmLabel(L.nms[i - 1]))
+            + ' nm</b><i>' + (d >= 0 ? "+" : "−") + Math.abs(d).toFixed(1) + " meV</i></span>";
+    }
+    line += '<span class="lv"><b>' + Es[i].toFixed(3) + '</b><i>'
+          + esc(stateNote(L, i, taus[i])) + "</i></span>";
+  }
+  const terms = esc(names.join("  →  "));
 
   let top;
   if (L.ai){
@@ -240,7 +315,7 @@ function ladderRow(sp, L){
   }
   const flag = L.unver ? ' <span class="pill">' + L.unver + ' rung(s) unpublished</span>' : "";
   return '<tr><td>' + esc(sp) + (L.kind === "ground" ? ' <span class="pill">ground</span>' : "")
-       + '</td><td class="num">' + L.order + '</td><td class="num">' + L.ms.length
+       + '</td><td class="num">' + L.order + '</td><td class="num">' + L.ms.join("+")
        + '</td><td class="num">' + L.det.toFixed(1) + ' meV</td>'
        + '<td><div class="chain">' + line + '</div><div class="terms">' + terms + '</div></td>'
        + '<td>' + top + flag + '</td></tr>';
@@ -251,7 +326,7 @@ function matRow(m){
                  m.evidence + (m.fast_rung_at ? " (" + m.fast_rung_at + ")" : ""),
                  m.rung_lifetimes, m.closure + " · " + m.best_detuning_meV + " meV",
                  m.hop_amplitude + (m.relative_amplitude ? " " + m.relative_amplitude : ""),
-                 m.order, m.hops, m.single_colour,
+                 m.order, m.pattern, m.single_colour,
                  m.reach_eV_neutral_frame ? m.reach_eV_neutral_frame + " eV" : "–",
                  m.accidental_matches_per_hop];
   return '<tr class="t' + m.tier + '">'

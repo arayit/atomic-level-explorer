@@ -216,6 +216,7 @@ def main() -> int:
             "evidence": b["subns_evidence"], "closure": b["detuning_tier"],
             "best_detuning_meV": b["_det"],
             "order": b["_order"], "hops": b["_hops"],       # of the BEST ladder, not the set
+            "pattern": b["photons_per_hop"], "colours": b["colours_nm"],
             "max_order": max(x["_order"] for x in rs),
             "min_hops": min(x["_hops"] for x in rs),
             "ground_start": "yes" if any(x["start_kind"] == "ground" for x in rs) else "no",
@@ -247,7 +248,7 @@ def main() -> int:
     cols = ["tier", "score", "spectrum", "element", "Z", "charge", "prep_cost", "prep_note",
             "evidence", "fast_rung_at", "fast_rung_tau_s", "rung_lifetimes",
             "verified_ladders", "closure", "best_detuning_meV", "hop_amplitude",
-            "relative_amplitude", "order", "hops",
+            "relative_amplitude", "order", "pattern", "colours", "hops",
             "max_order", "min_hops",
             "ground_start", "single_colour", "hop_strength", "worst_virtual_gap_eV",
             "reach_eV_neutral_frame", "n_ladders", "accidental_matches_per_hop", "truncated"]
@@ -355,7 +356,7 @@ def main() -> int:
             continue
         L.append(f"\n### Tier {t} - {len(grp)} species\n")
         L.append("| species | Z | preparation | fast rung | closure | best detuning | "
-                 "rung lifetimes | hop amplitude | order | hops | best order anywhere | start | 1 colour | reach | "
+                 "state lifetimes | hop strength | order | pattern | best order anywhere | start | 1 colour | reach | "
                  "chance matches per hop |")
         L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
         for x in grp:
@@ -364,7 +365,7 @@ def main() -> int:
                      f"{x['best_detuning_meV']:.1f} meV | {x['rung_lifetimes']} | "
                      f"{x['hop_amplitude']}"
                      f"{' ' + x['relative_amplitude'] if x['relative_amplitude'] else ''} | "
-                     f"{x['order']} | {x['hops']} | {x['max_order']} | "
+                     f"{x['order']} | {x['pattern']} | {x['max_order']} | "
                      f"{x['ground_start'] == 'yes' and 'ground' or 'metastable'} | "
                      f"{x['single_colour']} | {x['reach_eV_neutral_frame']} eV | "
                      f"{x['accidental_matches_per_hop']} |")
