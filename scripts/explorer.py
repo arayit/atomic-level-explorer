@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scrape import norm_conf, norm_term, parse_j            # noqa: E402
+import ladders_tab                                          # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_ROOT = ROOT / "energy_levels"
@@ -244,8 +245,11 @@ a{color:var(--link)}
 .controls button{padding:1px 8px}
 
 /* ---------- grid ---------- */
+#view-levels{display:flex; flex-direction:column; flex:1; min-height:0}
+/* an id selector outranks the user agent's [hidden] rule, so say it again here */
+#view-levels[hidden]{display:none}
 .grid{display:grid; grid-template-columns:196px minmax(0,1fr) 268px; flex:1; min-height:0}
-.rail{border-right:1px solid var(--rule); overflow:auto; max-height:calc(100vh - 118px)}
+.rail{border-right:1px solid var(--rule); overflow:auto; max-height:calc(100vh - 148px)}
 .rail.right{border-right:0; border-left:1px solid var(--rule)}
 .railhead{position:sticky; top:0; background:var(--paper); padding:8px 12px 5px;
   border-bottom:1px solid var(--rule-2); font-size:12px; color:var(--ink-3); z-index:2}
@@ -335,6 +339,14 @@ BODY = r"""
        Sources and method are listed at the foot of the page.</p>
   </div>
 
+  <nav class="tabs" role="tablist">
+    <button type="button" id="tab-levels" role="tab" aria-selected="true"
+            aria-controls="view-levels">Levels</button>
+    <button type="button" id="tab-ladders" role="tab" aria-selected="false"
+            aria-controls="view-ladders">Ladders</button>
+  </nav>
+
+  <section id="view-levels">
   <form class="controls" onsubmit="return false">
     <label>Energy from
       <select id="frame">
@@ -406,6 +418,10 @@ BODY = r"""
     </table></div>
   </section>
 
+  </section>
+
+__LADDERS_BODY__
+
   <section class="refs">
     <h2>Sources</h2>
     <p><b>Energy levels and transition probabilities.</b> NIST Atomic Spectra Database v5.12,
@@ -421,6 +437,13 @@ BODY = r"""
       <span class="mono">f = 1.4992&times;10<sup>&minus;16</sup> (g<sub>k</sub>/g<sub>i</sub>)
       A<sub>ki</sub> &lambda;<sup>2</sup></span> with &lambda; in &aring;ngstr&ouml;m, and are
       one-photon quantities only.
+      The Ladders tab is built by <span class="mono">scripts/ladder.py</span> from these same
+      tables: hops of 2 or 3 photons of one colour out of 1030, 1060, 1550, 1600, 1900 and
+      2000&nbsp;nm, matched to a measured level gap within 150&nbsp;meV, parity and
+      |&Delta;J|&nbsp;&le;&nbsp;m enforced per hop, and every rung but the last required to
+      outlive a 20&nbsp;ps intra-burst spacing. Hop amplitudes are perturbative dominant-term
+      estimates built from the same oscillator strengths, so they rank hops and do not measure
+      them, and no oscillator strength exists for the hop into the autoionizing region.
       Vapour temperatures belong to the neutral element, not to the ion, and are a precondition
       for preparing any charge state of it: the 1 Pa points (about
       10<sup>14</sup> cm<sup>&minus;3</sup>) from the
@@ -1045,7 +1068,7 @@ $('#tbody').addEventListener('click', e => {
   const l = levels(cur).find(x => x.id === tr.dataset.id);
   if (l){ pinned = (pinned && pinned.id === l.id) ? null : l; draw(); renderDetail(); }
 });
-document.querySelectorAll('thead th').forEach(th => th.addEventListener('click', () => {
+document.querySelectorAll('#view-levels thead th').forEach(th => th.addEventListener('click', () => {
   const k = th.dataset.k;
   if (sortKey === k) sortDir *= -1; else { sortKey = k; sortDir = 1; }
   draw();
@@ -1064,9 +1087,13 @@ $('#reset').addEventListener('click', () => { pinned = null; resetView(); render
 window.addEventListener('resize', draw);
 matchMedia('(prefers-color-scheme:dark)').addEventListener('change', draw);
 
+$('#tab-levels').addEventListener('click', () => showTab('levels'));
+$('#tab-ladders').addEventListener('click', () => showTab('ladders'));
+
 buildRail();
 select(Object.keys(DATA).find(s => DATA[s].lv.some(r => inWin(r[4]))) || Object.keys(DATA)[0]);
 setLambda(lamNm, 'init');
+initLadders();
 """
 
 
@@ -1077,15 +1104,20 @@ def build() -> tuple[str, str]:
     data = collect()
     newest = max(os.path.getmtime(f) for f in glob.glob(str(OUT_ROOT / "*" / "asd_levels.csv")))
     stamp = datetime.date.fromtimestamp(newest).strftime("%d %B %Y")
-    js = (JS.replace("__ELEM__", json.dumps(element_table(data), separators=(",", ":")))
+    mat, lad = ladders_tab.collect()
+    js = ((JS + ladders_tab.JS)
+            .replace("__MAT__", json.dumps(mat, separators=(",", ":")))
+            .replace("__LAD__", json.dumps(lad, separators=(",", ":")))
+            .replace("__ELEM__", json.dumps(element_table(data), separators=(",", ":")))
             .replace("__DATA__", json.dumps(data, separators=(",", ":")))
             .replace("__WIN_LO__", repr(WIN_LO)).replace("__WIN_HI__", repr(WIN_HI))
             .replace("__LAMBDA__", repr(LAMBDA_NM)))
-    body = BODY.replace("__DATE__", stamp)
-    fragment = (f"<title>{TITLE}</title>\n<style>{CSS}</style>\n{body}\n<script>{js}</script>\n")
+    body = BODY.replace("__DATE__", stamp).replace("__LADDERS_BODY__", ladders_tab.BODY)
+    css = CSS + ladders_tab.CSS
+    fragment = (f"<title>{TITLE}</title>\n<style>{css}</style>\n{body}\n<script>{js}</script>\n")
     standalone = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
                   '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
-                  f"<title>{TITLE}</title>\n<style>{CSS}</style>\n</head>\n<body>\n"
+                  f"<title>{TITLE}</title>\n<style>{css}</style>\n</head>\n<body>\n"
                   f"{body}\n<script>{js}</script>\n</body>\n</html>\n")
     return standalone, fragment
 

@@ -8,3 +8,9 @@ papers/
 __pycache__/
 *.pyc
 explorer_fragment.html
+
+# Ladder scan output: hundreds of MB, regenerable by scripts/ladder.py in about an hour.
+# The tiered summary it feeds (analysis/materials.*) is small and IS tracked.
+analysis/ladders*.csv
+analysis/hopstrength.csv
+analysis/*.log

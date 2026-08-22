@@ -1,0 +1,42 @@
+tier,score,spectrum,element,Z,charge,prep_cost,prep_note,evidence,fast_rung_at,fast_rung_tau_s,rung_lifetimes,verified_ladders,closure,best_detuning_meV,hop_amplitude,relative_amplitude,order,hops,max_order,min_hops,ground_start,single_colour,hop_strength,worst_virtual_gap_eV,reach_eV_neutral_frame,n_ladders,accidental_matches_per_hop,truncated
+1,1,Xe I,Xe,54,0,0,monatomic gas at 20 C,autoionizing,,,all measured,6551,A,17.5,strong,0.02,6,3,8,2,no,yes,moderate,0.465,13.39,9694,4.2,no
+1,3,Kr I,Kr,36,0,0,monatomic gas at 20 C,autoionizing,,,all measured,1847,A,3.4,strong,0.017,4,2,8,2,no,yes,moderate,0.219,14.63,1847,4.4,no
+2,4,F I,F,9,0,3,"F2 at 20 C, needs dissociation",autoionizing,,,all measured,342,A,8.0,strong,0.022,6,2,10,2,no,yes,virtual,1.011,19.9,4806,1.9,no
+2,4,Mg I,Mg,12,0,2,"vapour, 1 Pa at 428 C",autoionizing,,,all measured,410,A,12.7,moderate,0.0042,8,3,10,2,no,yes,virtual,1.599,11.36,1205,4.5,no
+2,4,O I,O,8,0,3,"O2 at 20 C, needs dissociation",autoionizing,,,all measured,665,A,12.0,strong,0.25,6,2,9,2,no,yes,moderate,0.39,16.89,665,2.6,no
+2,5,Ar I,Ar,18,0,0,monatomic gas at 20 C,autoionizing,,,all measured,60,B,26.1,moderate,0.0059,6,2,6,2,no,no,virtual,0.992,15.92,60,4.1,no
+2,5,Hg I,Hg,80,0,1,"vapour, 1 Pa at 42 C",autoionizing,,,all measured,299,B,55.3,moderate,0.0019,8,3,10,2,no,yes,virtual,1.495,13.98,7454,3.2,no
+2,6,S I,S,16,0,3,"S8 at 20 C, needs dissociation",autoionizing,,,all measured,1363,A,3.5,strong,0.89,4,2,6,2,no,yes,enhanced,0.138,13.35,1363,2.6,no
+2,6,Sr I,Sr,38,0,2,"vapour, 1 Pa at 523 C",autoionizing,,,all measured,38945,A,7.6,weak,0.00045,7,3,12,2,yes,yes,enhanced,0.188,7.4,134694,6.3,no
+3,7,Al I,Al,13,0,3,"vapour, 1 Pa at 1209 C",autoionizing,,,all measured,148,A,21.1,not scored,,9,3,10,3,yes,yes,virtual,1.939,9.49,400,2.9,no
+3,7,B I,B,5,0,3,"vapour, 1 Pa at 2075 C",autoionizing,,,all measured,642,A,5.9,weak,2.7e-08,6,2,12,2,yes,yes,virtual,1.272,12.01,1044,1.5,no
+3,7,Ca I,Ca,20,0,2,"vapour, 1 Pa at 591 C",autoionizing,,,all measured,20270,A,13.5,weak,1.6e-05,5,2,11,2,yes,yes,moderate,0.551,9.17,59623,11.2,no
+3,7,Cl I,Cl,17,0,3,"Cl2 at 20 C, needs dissociation",autoionizing,,,all measured,1204,B,41.7,not scored,,6,3,8,2,no,yes,moderate,0.584,16.37,7102,3.0,no
+3,7,Cr I,Cr,24,0,3,"vapour, 1 Pa at 1383 C",autoionizing,,,all measured,29933,A,2.5,weak,0.00013,6,2,11,2,yes,yes,stepwise,0.018,8.21,49093,10.7,no
+3,7,Cu I,Cu,29,0,3,"vapour, 1 Pa at 1236 C",autoionizing,,,all measured,1316,A,12.8,weak,0.00014,8,3,11,2,yes,yes,virtual,1.597,10.81,88343,3.0,no
+3,7,Mn I,Mn,25,0,3,"vapour, 1 Pa at 955 C",autoionizing,,,all measured,54880,A,9.9,weak,1.7e-05,8,4,12,2,yes,yes,enhanced,0.06,8.66,174854,7.2,no
+3,7,Ni I,Ni,28,0,3,"vapour, 1 Pa at 1510 C",autoionizing,,,all measured,5903,A,18.4,weak,0.00049,8,3,10,2,yes,yes,moderate,0.567,7.79,5954,5.6,no
+3,7,V I,V,23,0,3,"vapour, 1 Pa at 1828 C",autoionizing,,,all measured,5261,A,14.2,weak,0.00086,7,3,11,2,yes,yes,enhanced,0.069,7.14,8381,12.2,no
+3,7,Y I,Y,39,0,4,no vapour datum,autoionizing,,,all measured,357,A,4.5,moderate,0.0091,5,2,10,2,yes,yes,enhanced,0.058,6.23,1301,4.6,no
+3,8,Fe II,Fe,26,1,5,"vapour, 1 Pa at 1455 C + discharge",measured,final,7.962e-10,all measured,7047,A,3.9,weak,2.2e-05,9,4,12,3,yes,yes,virtual,,21.37,7522,9.5,yes
+3,8,Hg II,Hg,80,1,3,"vapour, 1 Pa at 42 C + discharge",measured,intermediate,4.466e-10,all measured,271,B,28.0,weak,4.6e-06,12,4,12,2,no,yes,virtual,2.407,29.29,371,0.7,no
+3,8,Pb I,Pb,82,0,3,"vapour, 1 Pa at 705 C",autoionizing,,,all measured,83,A,15.4,weak,0.00049,5,2,11,2,yes,yes,enhanced,0.118,8.65,9423,2.6,no
+3,8,Rb II,Rb,37,1,3,"vapour, 1 Pa at 161 C + discharge",measured,intermediate,9.091e-10,all measured,227,B,55.0,weak,0.00089,9,3,12,2,no,yes,virtual,1.426,30.86,2063,0.9,no
+3,8,Si I,Si,14,0,3,"vapour, 1 Pa at 1635 C",autoionizing,,,all measured,1426,A,3.9,weak,2.4e-05,5,2,12,2,no,yes,virtual,0.76,11.71,1752,8.3,no
+3,8,V II,V,23,1,5,"vapour, 1 Pa at 1828 C + discharge",measured,final,9.174e-10,all measured,3385,A,10.1,weak,1.8e-05,9,4,11,4,yes,yes,virtual,,17.45,3476,4.2,yes
+3,9,Cs II,Cs,55,1,3,"vapour, 1 Pa at 145 C + discharge",autoionizing,,,3 rung(s) unpublished,0,A,15.0,not scored,,10,4,12,4,no,no,virtual,,28.37,10884,2.0,no
+3,9,Si II,Si,14,1,5,"vapour, 1 Pa at 1635 C + discharge",measured,intermediate,8.826e-10,all measured,152,A,21.7,weak,1.6e-07,7,3,10,2,no,no,virtual,3.982,22.32,152,0.9,no
+3,9,Sn II,Sn,50,1,5,"vapour, 1 Pa at 1224 C + discharge",measured,intermediate,4.527e-10,all measured,696,A,9.6,weak,1.3e-05,9,4,11,2,no,no,virtual,2.215,23.8,800,0.7,no
+3,10,Ge II,Ge,32,1,5,"vapour, 1 Pa at 1371 C + discharge",measured,intermediate,4.545e-10,all measured,424,B,32.0,not scored,,10,4,12,2,no,yes,virtual,2.692,26.42,1668,0.8,no
+3,10,Zn I,Zn,30,0,2,"vapour, 1 Pa at 337 C",autoionizing,,,1 rung(s) unpublished,0,B,54.8,not scored,,8,3,10,3,no,no,virtual,1.406,12.77,845,3.3,no
+4,11,Cd I,Cd,48,0,2,"vapour, 1 Pa at 257 C",autoionizing,,,all measured,14,C,92.7,not scored,,7,3,10,2,no,yes,virtual,1.637,12.13,200,1.6,no
+4,11,K II,K,19,1,3,"vapour, 1 Pa at 200 C + discharge",measured,intermediate,6.210e-10,all measured,135,C,128.5,not scored,,9,3,11,2,no,yes,virtual,1.719,35.44,1031,0.5,no
+4,11,Tl I,Tl,81,0,2,"vapour, 1 Pa at 609 C",autoionizing,,,all measured,20,C,65.0,not scored,,7,3,10,2,no,yes,virtual,1.55,9.42,1280,1.5,no
+4,12,Be I,Be,4,0,3,"vapour, 1 Pa at 1189 C",autoionizing,,,all measured,1362,C,120.7,not scored,,8,3,10,3,no,yes,virtual,2.528,12.95,2009,1.8,no
+4,12,Co III,Co,27,2,9,"vapour, 1 Pa at 1517 C + 2x ionization",measured,final,9.748e-10,all measured,7619,A,23.6,weak,1.5e-12,9,4,9,2,no,yes,virtual,,43.34,7619,1.3,no
+4,12,Fe III,Fe,26,2,9,"vapour, 1 Pa at 1455 C + 2x ionization",measured,final,8.254e-10,all measured,517,A,12.4,not scored,,9,4,9,4,no,yes,virtual,,38.84,517,2.9,no
+4,12,Sn I,Sn,50,0,3,"vapour, 1 Pa at 1224 C",autoionizing,,,all measured,1684,C,110.3,not scored,,7,3,11,2,no,yes,virtual,,10.27,3499,3.1,no
+4,13,Ge I,Ge,32,0,3,"vapour, 1 Pa at 1371 C",autoionizing,,,all measured,14,C,148.8,not scored,,7,3,7,3,no,no,virtual,2.556,8.12,48,7.4,no
+4,15,Pb II,Pb,82,1,5,"vapour, 1 Pa at 705 C + discharge",measured,intermediate,7.092e-10,all measured,28,C,104.6,not scored,,4,2,10,2,no,yes,virtual,1.277,22.24,6688,0.9,no
+4,15,Tl II,Tl,81,1,4,"vapour, 1 Pa at 609 C + discharge",measured,final,5.917e-10,1 rung(s) unpublished,0,C,128.1,not scored,,4,2,10,2,no,yes,virtual,6.116,22.77,30,0.6,no
+4,16,Ca III,Ca,20,2,8,"vapour, 1 Pa at 591 C + 2x ionization",measured,intermediate,8.333e-10,all measured,34,C,94.7,not scored,,7,3,9,2,no,yes,virtual,4.579,54.06,141,0.5,no
