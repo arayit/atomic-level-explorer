@@ -26,18 +26,67 @@ PER_SPECIES_EMIT = 14     # best that end on a bound level which is itself fast,
 
 EV_RANK = {"measured": 0, "autoionizing": 1, "none": 2}
 DET_RANK = {"A": 0, "B": 1, "C": 2}
+DRIVERS_NM = [1030, 1060, 1550, 1600, 1900, 2000]
+
+
+def n_sources(colours_nm):
+    """Distinct lasers: a second harmonic maps back to its fundamental, since the SHG
+    output is inherently synchronized with the driver it came from."""
+    return len({(x if x in DRIVERS_NM else 2 * x) for x in map(float, colours_nm.split("+"))})
+
+
+OUT_ROOT = ROOT / "energy_levels"
+E_MATCH = 1e-3
+
+
+def decay_index(sp):
+    """top-state energy -> (strongest published decay in eV, its branching).
+
+    `final_max_decay_eV` is the LARGEST energy drop out of the level, which is the shortest
+    wavelength it could possibly emit -- but that line is often weak, and sometimes carries no
+    published A-value at all, so quoting it advertises a wavelength nobody has measured a rate
+    for. What an experiment would actually see is the strongest channel, so index that instead
+    and carry its branching alongside, computed over the published channels only.
+    """
+    src = OUT_ROOT / sp.replace(" ", "_") / "transitions.csv"
+    if not src.exists():
+        return {}
+    per = {}
+    for r in csv.DictReader(src.open(encoding="utf-8")):
+        try:
+            ek, de, a = float(r["E_k_eV"]), float(r["dE_eV"]), float(r["Aki_s-1"])
+        except (ValueError, KeyError):
+            continue
+        per.setdefault(round(ek, 4), []).append((de, a))
+    out = {}
+    for ek, ch in per.items():
+        total = sum(a for _, a in ch)
+        if total <= 0:
+            continue
+        de, a = max(ch, key=lambda x: x[1])
+        out[ek] = (de, a / total)
+    return out
+
+
+def strongest(idx, e):
+    """Nearest top state within E_MATCH, or (None, None)."""
+    if not idx:
+        return None, None
+    k = min(idx, key=lambda x: abs(x - e))
+    return idx[k] if abs(k - e) <= E_MATCH else (None, None)
 
 
 def _key(r):
     return (EV_RANK[r["subns_evidence"]], 1 if int(r["unverified_parked"] or 0) else 0,
             DET_RANK[r["detuning_tier"]],
-            0 if len(set(r["colours_nm"].split("+"))) == 1 else 1,
+            0 if n_sources(r["colours_nm"]) == 1 else 1,
             -int(r["order"]), float(r["worst_detuning_meV"]))
 
 
-def _row(r):
+def _row(r, didx):
     """One ladder, as a compact array. Field order is mirrored by unpack() in the page JS."""
     names = r["path"].split(" -> ")
+    s_de, s_br = strongest(didx, float(r["final_eV"]))
     return [
         r["start"], float(r["start_eV"]), names,
         [float(x) for x in r["path_eV"].split(" -> ")],
@@ -52,6 +101,8 @@ def _row(r):
         float(r["final_eV_neutral_frame"]) if r["final_eV_neutral_frame"] else None,
         int(r["unverified_parked"] or 0),
         r["start_kind"],
+        round(s_de, 4) if s_de else None,
+        round(s_br, 3) if s_br else None,
     ]
 
 
@@ -63,22 +114,26 @@ def collect():
 
     lad = {}
     for sp, rs in by.items():
+        didx = decay_index(sp)
         rs.sort(key=_key)
         pick, seen = [], set()
         bound = [r for r in rs if r["final_above_ionization"] == "no"][:PER_SPECIES_BOUND]
         # The chains that answer "does this end in a photon?": bound top state, its own
         # lifetime inside the picosecond window, and a published decay energy to quote a
         # wavelength from. Ranked by photon energy, so the shortest wavelength leads.
+        # Ranked by the STRONGEST published decay, not the largest drop: ranking by the latter
+        # promotes exactly the chains whose advertised wavelength is least trustworthy.
         emit = [r for r in rs if r["final_above_ionization"] == "no"
-                and r["final_max_decay_eV"] and r["fast_rung_at"] in ("final", "both")]
-        emit.sort(key=lambda r: (-float(r["final_max_decay_eV"]),
+                and r["fast_rung_at"] in ("final", "both")
+                and strongest(didx, float(r["final_eV"]))[0]]
+        emit.sort(key=lambda r: (-strongest(didx, float(r["final_eV"]))[0],
                                  float(r["worst_detuning_meV"])))
         for r in rs[:PER_SPECIES] + bound + emit[:PER_SPECIES_EMIT]:
             k = (r["start"], r["path"], r["photons_per_hop"], r["colours_nm"])
             if k in seen:
                 continue
             seen.add(k)
-            pick.append(_row(r))
+            pick.append(_row(r, didx))
         lad[sp] = pick
 
     keep = ("tier", "spectrum", "element", "Z", "charge", "prep_note", "prep_cost", "evidence",
@@ -226,7 +281,8 @@ const MAT = __MAT__, LAD = __LAD__;
 function unpack(a){
   return {start:a[0], startE:a[1], names:a[2], Es:a[3], taus:a[4], ms:a[5], nms:a[6],
           det:a[7], order:a[8], ev:a[9], fastAt:a[10], fastTau:a[11], ai:a[12],
-          decay:a[13], neutral:a[14], unver:a[15], kind:a[16]};
+          decay:a[13], neutral:a[14], unver:a[15], kind:a[16],
+          sDecay:a[17], sBranch:a[18]};
 }
 
 /* Number(x.toPrecision(3)) drops trailing zeros only after a decimal point. Stripping them
@@ -430,9 +486,12 @@ function ladderRow(sp, L, IDX){
   if (L.ai){
     top = '<span class="muted">above ionization</span> '
         + esc(L.Es[L.Es.length - 1].toFixed(2)) + " eV";
-  } else if (L.decay && L.fastTau != null && L.fastAt !== "intermediate"){
-    top = '<span class="emit">emits ' + esc(nmLabel(HC / L.decay)) + " nm</span> · τ "
-        + esc(tauText(L.fastTau));
+  } else if (L.sDecay && L.fastTau != null && L.fastAt !== "intermediate"){
+    /* The strongest PUBLISHED channel, with its branching. The largest drop out of the level is
+       a shorter wavelength but usually a weak line, and sometimes one with no measured rate. */
+    top = '<span class="emit">emits ' + esc(nmLabel(HC / L.sDecay)) + " nm</span>"
+        + (L.sBranch != null ? " · " + Math.round(L.sBranch * 100) + "% branch" : "")
+        + " · τ " + esc(tauText(L.fastTau));
   } else {
     top = '<span class="muted">bound</span> ' + esc(L.Es[L.Es.length - 1].toFixed(2)) + " eV"
         + (L.fastTau != null ? ' · fast rung τ ' + esc(tauText(L.fastTau)) : "");

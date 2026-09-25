@@ -178,6 +178,9 @@ def main() -> int:
     ap.add_argument("--park-unknown", action="store_true",
                     help="pass through to ladder.py, so the ladders scored here are the same "
                          "ones the material table ranks")
+    ap.add_argument("--sh", nargs="*", type=float, default=None, metavar="NM",
+                    help="pass through to ladder.py: second harmonics of these colours "
+                         "(of every driver when bare)")
     ap.add_argument("--out", default="hopstrength.csv")
     a = ap.parse_args()
 
@@ -199,7 +202,8 @@ def main() -> int:
         tmp = f"_hs_{d.name}.csv"
         subprocess.run([sys.executable, str(ROOT / "scripts" / "ladder.py"),
                         "--species", d.name, "--out", tmp]
-                       + (["--park-unknown"] if a.park_unknown else []),
+                       + (["--park-unknown"] if a.park_unknown else [])
+                       + (["--sh"] + [f"{v:g}" for v in a.sh] if a.sh is not None else []),
                        check=True, stdout=subprocess.DEVNULL)
         lad = list(csv.DictReader((ANA / tmp).open(encoding="utf-8")))
         (ANA / tmp).unlink()

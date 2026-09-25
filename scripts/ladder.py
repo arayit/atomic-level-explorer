@@ -31,7 +31,8 @@ hence the completeness flag carried through to the output.
 
 Usage:
     python3 scripts/ladder.py                   # 6 burst colours, m in {2,3}, +-150 meV
-    python3 scripts/ladder.py --sh              # also allow each colour's second harmonic
+    python3 scripts/ladder.py --sh              # also allow every colour's second harmonic
+    python3 scripts/ladder.py --sh 1030 1060    # add only 515 and 530 nm (Yb harmonics)
     python3 scripts/ladder.py --species Ca_I --min-m 1
 """
 
@@ -294,7 +295,9 @@ def main() -> int:
     ap.add_argument("--max-hops", type=int, default=MAX_HOPS)
     ap.add_argument("--min-order", type=int, default=4, help="lowest total synthetic order")
     ap.add_argument("--spacing", type=float, default=SPACING_S, help="intra-burst spacing, s")
-    ap.add_argument("--sh", action="store_true", help="also allow each colour's 2nd harmonic")
+    ap.add_argument("--sh", nargs="*", type=float, default=None, metavar="NM",
+                    help="also allow second harmonics: of the colours listed after the flag, "
+                         "or of every driver when the flag is given bare")
     ap.add_argument("--keep-plain", action="store_true", help="keep ladders with no fast rung")
     ap.add_argument("--species", default="", help="restrict to one folder name, for checking")
     ap.add_argument("--max-charge", type=int, default=99, help="skip spectra above this charge")
@@ -303,7 +306,8 @@ def main() -> int:
     ap.add_argument("--out", default="ladders.csv")
     a = ap.parse_args()
 
-    nms = list(DRIVERS_NM) + ([n / 2 for n in DRIVERS_NM] if a.sh else [])
+    doubled = [] if a.sh is None else (list(a.sh) or list(DRIVERS_NM))
+    nms = list(DRIVERS_NM) + [n / 2 for n in doubled]
     grid = [(nm, HC / nm, m) for nm in nms for m in range(max(1, a.min_m), 4)]
 
     ions = {}
